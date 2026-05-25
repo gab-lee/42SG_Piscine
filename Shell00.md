@@ -13,6 +13,9 @@ Ex02:
 Exercise 03: SSH me!
 - ssh keygen
 
+link symlink
+ln -s target linkname
+
 Exercise 06: gitignore
 
 git ls-files --ignored --exclude-standard -o
@@ -21,3 +24,7 @@ git ls-files --ignored --exclude-standard -o
 Exercise 08: clean
 - make the file executable chmod +x
 - find <criteria> -name "*~" ends with tilde 
+
+Exercise 09: Illusions, not tricks, Michael...
+- make magic file, executable
+- 
