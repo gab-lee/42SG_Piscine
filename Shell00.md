@@ -17,3 +17,7 @@ Exercise 06: gitignore
 
 git ls-files --ignored --exclude-standard -o
 - list all files, using gitignore, standard rules, -o shows untracked files
+
+Exercise 08: clean
+- make the file executable chmod +x
+- find <criteria> -name "*~" ends with tilde 
