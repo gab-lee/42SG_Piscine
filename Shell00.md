@@ -1,3 +1,15 @@
+Ex02:
+| Number | Permissions |
+|--------|-------------|
+| 0 | --- |
+| 1 | --x |
+| 2 | -w- |
+| 3 | -wx |
+| 4 | r-- |
+| 5 | r-x |
+| 6 | rw- |
+| 7 | rwx |
+
 Exercise 03: SSH me!
 - ssh keygen
 
