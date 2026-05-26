@@ -19,7 +19,9 @@
 - Each digit is the sum of the authorisation of each category (owner, group, others) Read = 4, Write = 2, Execute = 1 
 - Alternatively, you can do chmod + r/w/x to allow feature access across all groups
 - Use 'ln -s' a symlink (alias) <original file> <alias name>
-- 'tar -xvf' to extract file 
+- 'tar -xvf' to extract file
+- use ln by itself to hardlink (pointers)
+- echo -n to remove trailing thing to get 1 byte doc
 
 | Number | Permissions |
 |--------|-------------|
