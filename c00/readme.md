@@ -15,5 +15,12 @@
 #EX03
 - write cannot output integers, 0 must be coded as a character 
 
-#E04
+#EX04
 - store the char to display in a char variable
+
+#EX05
+- convert int to char using +0 
+- get different place in a number using %10 and /10 
+- use || to symbolise or
+- write accepts pointers, but to use a string literal use doubel quotes ""
+
