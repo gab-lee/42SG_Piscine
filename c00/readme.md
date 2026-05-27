@@ -14,3 +14,6 @@
 
 #EX03
 - write cannot output integers, 0 must be coded as a character 
+
+#E04
+- store the char to display in a char variable
