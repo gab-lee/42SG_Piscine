@@ -10,4 +10,7 @@
 - write (0/1/2) 0 is keyboard input, 1 is terminal output 2 is error output
 
 #EX02
-- same as EX01, just change direction and starting pointc <= 'a' instead of c >= 'z' 
+- same as EX01, just change direction and starting pointc <= 'a' instead of c >= 'z'
+
+#EX03
+- write cannot output integers, 0 must be coded as a character 
