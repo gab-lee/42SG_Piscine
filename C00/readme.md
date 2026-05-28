@@ -24,3 +24,6 @@
 - use || to symbolise or
 - write accepts pointers, but to use a string literal use doubel quotes ""
 
+In your Shell ConfigurationAlternatively, add these to your ~/.zshrc or ~/.bashrc:bashexport USER='your_username'
+export MAIL='your_email@example.com'
+Use code with caution.

@@ -1,15 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/28 16:06:37 by gabrlee           #+#    #+#             */
+/*   Updated: 2026/05/28 16:11:00 by gabrlee          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void ft_is_negative(int n){
-	//display N/P if n is negative/positive
-	char d = 'N';
+void	ft_is_negative(int n)
+{
+	char	d;
 
-	if(n < 0){
-	write(1,&d,1);
-	} 
-
-	else{
-	d = 'P';
-	write(1,&d,1);
+	d = 'N';
+	if (n < 0)
+	{
+		write(1, &d, 1);
+	}
+	else
+	{
+		d = 'P';
+		write(1, &d, 1);
 	}
 }

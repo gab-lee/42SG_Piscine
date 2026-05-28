@@ -5,17 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/28 16:05:14 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/05/28 16:05:54 by gabrlee          ###   ########.fr       */
+/*   Created: 2026/05/28 17:10:08 by gabrlee           #+#    #+#             */
+/*   Updated: 2026/05/28 17:34:46 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_is_negative(int n);
+void	ft_putnbr(int nb);
 
 int	main(void)
 {
-	ft_is_negative(-8);
+	int	nb;
+	nb = 4;
+	ft_putnbr(nb);
 	return (0);
 }
