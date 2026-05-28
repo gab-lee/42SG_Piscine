@@ -1,7 +1,21 @@
-#include <unistd.h>
-void ft_putchar(char c);
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gabrlee <gabrlee@student.42singapore.      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/28 13:12:59 by gabrlee           #+#    #+#             */
+/*   Updated: 2026/05/28 13:29:35 by gabrlee          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int main(void){
+#include <unistd.h>
+
+void	ft_putchar(char c);
+
+int	main(void)
+{
 	ft_putchar('A');
-	return 0;
+	return (0);
 }
