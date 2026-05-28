@@ -1,8 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gabrlee <gabrlee@student.42singapore.      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/28 16:13:05 by gabrlee           #+#    #+#             */
+/*   Updated: 2026/05/28 16:13:29 by gabrlee          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void ft_print_comb(void);
+void	ft_print_comb(void);
 
-int main(void){
+int	main(void)
+{
 	ft_print_comb();
-	return 0;
+	return (0);
 }
