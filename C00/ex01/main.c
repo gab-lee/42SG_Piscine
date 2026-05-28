@@ -1,7 +1,21 @@
-#include <unistd.h>
-void ft_print_alphabet(void);
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gabrlee <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/28 12:22:44 by gabrlee           #+#    #+#             */
+/*   Updated: 2026/05/28 14:22:57 by gabrlee          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int main(void){
+#include <unistd.h>
+
+void	ft_print_alphabet(void);
+
+int	main(void)
+{
 	ft_print_alphabet();
-	return 0;
+	return (0);
 }
