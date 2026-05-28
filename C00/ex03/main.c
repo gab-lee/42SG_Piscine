@@ -1,7 +1,21 @@
-#include <unistd.h>
-void ft_print_numbers(void);
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/28 15:57:16 by gabrlee           #+#    #+#             */
+/*   Updated: 2026/05/28 15:57:46 by gabrlee          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int main(void){
+#include <unistd.h>
+
+void	ft_print_numbers(void);
+
+int	main(void)
+{
 	ft_print_numbers();
-	return 0;
+	return (0);
 }
