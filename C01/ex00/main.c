@@ -1,0 +1,20 @@
+#include <unistd.h>
+
+void	ft_ft(int *nbr);
+
+int	main(void)
+{
+	int	a;
+	int	b;
+	char	c;
+
+	a = 0;
+	ft_ft(&a);
+	b = a/10;
+	c = b + '0';
+	write(1, &c, 1);
+	b = a%10; 
+	c = b + '0';
+	write(1, &c, 1);
+	return (0);
+}
