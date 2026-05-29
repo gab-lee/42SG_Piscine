@@ -6,18 +6,18 @@
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 17:10:08 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/05/28 17:34:46 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/05/29 14:57:11 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putnbr(int nb);
+void	ft_putnbr(int nbr);
 
 int	main(void)
 {
-	int	nb;
-	nb = 4;
-	ft_putnbr(nb);
+	int	nbr;
+	nbr = -50;
+	ft_putnbr(nbr);
 	return (0);
 }

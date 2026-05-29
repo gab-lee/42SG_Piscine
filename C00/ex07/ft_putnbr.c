@@ -6,26 +6,57 @@
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 17:12:29 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/05/28 18:01:12 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/05/29 14:56:44 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putnbr(int nb)
+void 	ft_sizenbr(int nbr, int *size)
+{
+	while (nbr)
+	{
+		nbr = nbr/10;
+		*size = *size + 1;
+	}
+}
+
+void	ft_displaynbr(int nbr)
+{
+	char	c;
+	c  = '0' + nbr;
+	write (1,&c,1);
+}
+
+void	ft_displayd(int nbr, int exp)
+{
+	int	d;
+	while(exp-1)
+	{
+		nbr = nbr / 10; 
+		exp = exp -1;
+	}
+	d = nbr %10;
+	ft_displaynbr(d);
+}
+
+void	ft_putnbr(int nbr)
 {
 	int	size;
-	int	a;
-	char	output;
-	
-	size = 0;
-	a = nb;
-	while(a)
+	if (nbr == 0)
 	{
-		a = a / 10;
-		size ++;	
+		ft_displaynbr(0); 
 	}
-	output = nb + '0';
-	write(1,&output,size);
-	output = 
+	if (nbr < 0)
+	{
+		nbr = nbr * -1;
+		write(1,"-",1);
+	}
+	size = 0;
+	ft_sizenbr(nbr, &size);
+	while(size)
+	{
+		ft_displayd(nbr,size);
+		size = size -1;
+	}
 }
