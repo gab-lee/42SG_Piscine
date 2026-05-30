@@ -6,7 +6,7 @@
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 16:40:49 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/05/28 17:08:06 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/05/30 09:53:50 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	ft_write_number(int n)
 	char	t_place;
 	char	o_place;
 
-	t_place = n/10 + '0';
-	o_place = n %10 + '0';
+	t_place = n / 10 + '0';
+	o_place = n % 10 + '0';
 	write(1, &t_place, 1);
 	write(1, &o_place, 1);
 }
@@ -29,18 +29,17 @@ void	ft_print_comb2(void)
 	int	b;
 
 	a = 0;
-	while(a<=99)
+	while (a <= 99)
 	{
-		b = a+1;
-		while(b<=99 && b>a)
+		b = a + 1;
+		while (b <= 99 && b > a)
 		{
 			ft_write_number(a);
-			write(1," ",1);
+			write(1, " ", 1);
 			ft_write_number(b);
-			write(1,",",1);
-			b++;	
+			write(1, ",", 1);
+			b++;
 		}
 		a++;
-	}	
+	}
 }
-
