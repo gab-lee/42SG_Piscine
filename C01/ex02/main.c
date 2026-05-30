@@ -6,13 +6,13 @@
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/30 10:44:43 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/05/30 10:44:54 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/05/30 15:48:26 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void 	ft_swap(int *a, int*b);
+void	ft_swap(int *a, int*b);
 
 int	main(void)
 {
