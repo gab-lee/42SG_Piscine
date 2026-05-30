@@ -6,7 +6,7 @@
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 16:50:44 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/05/29 16:51:19 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/05/30 15:57:10 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,9 @@ void	ft_putstr(char *str);
 
 int	main(void)
 {
-	return 0;
+	char	c[99];
+	c[0] = 'h';
+	c[1] = 'i';
+	ft_putstr(c);
+	return (0);
 }
