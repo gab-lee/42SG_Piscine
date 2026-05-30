@@ -6,7 +6,7 @@
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 17:10:08 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/05/29 14:57:11 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/05/30 09:57:40 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	ft_putnbr(int nbr);
 int	main(void)
 {
 	int	nbr;
+
 	nbr = -50;
 	ft_putnbr(nbr);
 	return (0);
