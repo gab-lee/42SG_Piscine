@@ -6,7 +6,7 @@
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 17:12:29 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/05/30 10:01:08 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/05/30 14:55:21 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@ void	ft_displaynbr(int nbr)
 {
 	char	c;
 
+	if (nbr < 0)
+	{
+		nbr = nbr * -1;
+	}
 	c = '0' + nbr;
 	write (1, &c, 1);
 }
@@ -52,7 +56,6 @@ void	ft_putnbr(int nbr)
 	}
 	if (nbr < 0)
 	{
-		nbr = nbr * -1;
 		write(1, "-", 1);
 	}
 	size = 0;
