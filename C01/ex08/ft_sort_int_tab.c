@@ -1,14 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/01 09:38:35 by gabrlee           #+#    #+#             */
+/*   Updated: 2026/06/01 09:40:43 by gabrlee          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void    ft_swap(int *a, int *b)
+void	ft_swap(int *a, int *b)
 {
-        int     c;
-        int     d;
+	int	c;
+	int	d;
 
-        c = *a;
-        d = *b;
-        *a = d;
-        *b = c;
+	c = *a;
+	d = *b;
+	*a = d;
+	*b = c;
 }
 
 int	ft_isbigger(int *a, int *b)
@@ -19,14 +31,14 @@ int	ft_isbigger(int *a, int *b)
 	}
 	else
 	{
-		return(0);
+		return (0);
 	}
 }
 
 void	ft_max_pos(int *tab, int sort_size, int *pos_max)
 {
 	int	cur_pos;
-	
+
 	*pos_max = 0;
 	cur_pos = 0;
 	while (cur_pos < sort_size)

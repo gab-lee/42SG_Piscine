@@ -6,7 +6,7 @@
 /*   By: gabrlee <gabrlee@student.42singapore.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/30 16:13:33 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/05/30 16:31:03 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/01 09:38:04 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	ft_swap(int *a, int*b)
 void	ft_rev_int_tab(int *tab, int size)
 {
 	int	cur;
+
 	cur = 0;
 	while (cur < size / 2)
 	{
