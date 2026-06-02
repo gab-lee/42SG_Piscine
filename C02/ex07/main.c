@@ -6,7 +6,7 @@
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 12:26:43 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/01 13:47:21 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/02 09:50:39 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_strupcase(char *str);
 
 int	main(void)
 {
-	char str[]="abcd!!!efg";
+	char str[]="aABCVd!!!efg";
 	
 	ft_strupcase(str);
 	printf("%s\n",str);
