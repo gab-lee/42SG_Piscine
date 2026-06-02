@@ -6,15 +6,15 @@
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 12:28:59 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/01 16:25:19 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/02 12:37:11 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int ft_is_char_alpha_numeric(char *c)
+int	ft_is_char_alpha_numeric(char *c)
 {
-	if ((*c >= 'a' && *c <= 'z') || (*c >= 'A'& *c <= 'Z'))
+	if ((*c >= 'a' && *c <= 'z') || (*c >= 'A' && *c <= 'Z'))
 		return (1);
 	if (*c >= '0' && *c <= '9')
 		return (1);
@@ -46,13 +46,13 @@ int	ft_strcapitalize(char *str)
 	while (*str != '\0')
 	{
 		if (ft_is_char_alpha_numeric(str))
-		{	
+		{
 			if (cap)
 			{
 				ft_char_low_uppercase(str);
 				cap = 0;
 			}
-			else 
+			else
 				ft_char_up_lowercase(str);
 		}
 		else

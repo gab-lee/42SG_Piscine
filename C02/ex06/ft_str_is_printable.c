@@ -6,7 +6,7 @@
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 12:28:59 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/02 11:19:23 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/02 12:31:39 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_str_is_printable(char *str)
 		if (ft_is_char_printable(str))
 		{
 			str++;
-			continue;
+			continue ;
 		}
 		else
 			return (0);

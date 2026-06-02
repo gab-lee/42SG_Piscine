@@ -6,7 +6,7 @@
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 12:15:14 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/01 12:23:58 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/02 12:20:52 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ int	main(void)
 	ft_strncpy(dest, src, n);
 	printf("src: %s\n", src);
 	printf("dest: %s\n", dest);
-	return(0);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 12:28:59 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/01 12:50:21 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/02 12:28:12 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_str_is_lowercase(char *str)
 		if (ft_is_char_lowercase(str))
 		{
 			str++;
-			continue;
+			continue ;
 		}
 		else
 		{

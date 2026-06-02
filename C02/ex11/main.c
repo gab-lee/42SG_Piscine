@@ -6,7 +6,7 @@
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 12:26:43 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/02 12:09:31 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/02 12:42:33 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ int	main(void)
 	str[1] = 65; //A
 	str[2] = 127; //delete key
 	str[3] = 88; //X
-
-	printf("Test string: %s\n",str);
+	printf("Test string: %s\n", str);
 	ft_putstr_non_printable(str);
 	return (0);
 }

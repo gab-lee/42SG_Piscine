@@ -6,7 +6,7 @@
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 12:28:59 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/01 12:37:55 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/02 12:24:29 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_is_alpha(char *c)
 {
-	if ((*c >= 'a' && *c <= 'z') || (*c >= 'A'& *c <= 'Z'))
+	if ((*c >= 'a' && *c <= 'z') || (*c >= 'A' && *c <= 'Z'))
 	{
 		return (1);
 	}
@@ -31,7 +31,7 @@ int	ft_str_is_alpha(char *str)
 		if (ft_is_alpha(str))
 		{
 			str++;
-			continue;
+			continue ;
 		}
 		else
 		{

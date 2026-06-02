@@ -6,7 +6,7 @@
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 12:26:43 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/01 14:08:18 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/02 12:35:28 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	ft_strlowcase(char *str);
 
 int	main(void)
 {
-	char str[]="aABCVd!!!efg";
+	char	str[] = "aABCVd!!!efg";
 	
 	ft_strlowcase(str);
-	printf("%s\n",str);
+	printf("%s\n", str);
 	return (0);
 }

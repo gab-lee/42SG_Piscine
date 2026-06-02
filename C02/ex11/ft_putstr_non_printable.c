@@ -6,7 +6,7 @@
 /*   By: gabrlee <gabrlee@student.42singapore.sg     #+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 11:22:03 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/02 12:10:27 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/02 12:42:05 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int	ft_is_char_printable(char *c)
 void	ft_put_hexadecimal(char *c)
 {
 	char	a;
-	
+
 	write(1, "\\", 1);
-	a = *c / 16 +'0';
+	a = *c / 16 + '0';
 	write(1, &a, 1);
 	if (*c % 16 < 10)
 	{
@@ -48,7 +48,7 @@ void	ft_putstr_non_printable(char *str)
 	while (*str != '\0')
 	{
 		if (ft_is_char_printable(str))
-			write(1,str,1);
+			write(1, str, 1);
 		else
 			ft_put_hexadecimal(str);
 		str++;

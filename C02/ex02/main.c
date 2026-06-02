@@ -6,7 +6,7 @@
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 12:26:43 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/01 12:38:25 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/02 12:24:59 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ int	ft_str_is_alpha(char *str);
 
 int	main(void)
 {
-	int n;
-	char str[]="ab11cdefg";
-	
+	int		n;
+	char	str[] = "abcdefg";
+
 	n = ft_str_is_alpha(str);
-	printf("%d\n",n);
+	printf("%d\n", n);
 	return (0);
 }
