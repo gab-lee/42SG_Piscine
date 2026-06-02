@@ -6,7 +6,7 @@
 /*   By: gabrlee <gabrlee@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 12:18:55 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/01 16:51:08 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/02 11:04:56 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,15 @@ unsigned int ft_strlcpy(char *dest, char *str, unsigned int size)
 	len = 0;
 	while (*str != '\0')
 	{
-		*dest = *str;
+		if (size >1)
+		{
+			*dest = *str;
+			dest++;
+			size--;
+		}
 		str++;
 		len++;
-		dest++;
 	}
+	*dest = '\0';
 	return (len);
 }
