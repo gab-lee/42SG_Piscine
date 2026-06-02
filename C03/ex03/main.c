@@ -1,4 +1,4 @@
-* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
@@ -12,20 +12,20 @@
 
 #include <stdio.h>
 
-char	*ft_strncat(char *dest, char *src);
+char	*ft_strncat(char *dest, char *src, unsigned int nb);
 
 int	main(void)
 {
 	//Test//
 	//Test 1: mixed alpha and numeric
-	char dest[] = "ab";
-	char src[] = "12";
-	unsigned int	n = 1;
+	char dest[] = "abc";
+	char src[] = "123456";
+	unsigned int	nb = 10;
 	char *result[99];
 	///////
-	printf("dest: %s\n",dest);
-	printf("dest: %s\n",src);
-	*result = ft_strncat(dest, src, n);
+	printf("dest: %s\n", dest);
+	printf("dest: %s\n", src);
+	*result = ft_strncat(dest, src, nb);
 	printf("result: %s\n", *result);
 	return (0);
 }

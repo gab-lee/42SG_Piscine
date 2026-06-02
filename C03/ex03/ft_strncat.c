@@ -17,13 +17,20 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	p = dest;
 	while (*p != '\0')
 		p++;
-	while (*src != '\0' || nb)
+	while (*src != '\0' && nb)
 	{
 		*p = *src;
 		p++;
 		src++;
 		nb--;
 	}
-	*p = '\0';
+    if (nb)
+    {
+        *p = '\0';
+        p++;
+        nb--;
+    }
+    else
+	    *p = '\0';
 	return (dest);
 }
