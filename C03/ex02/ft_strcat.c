@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/02 15:13:52 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/02 15:15:14 by gabrlee          ###   ########.fr       */
+/*   Created: 2026/06/02 15:39:33 by gabrlee           #+#    #+#             */
+/*   Updated: 2026/06/02 15:55:45 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	ft_strcmp(char *s1, char *s2)
+char	*ft_strcat(char *dest, char *src)
 {
-	while (*s1 != '\0' || *s2 != '\0')
+	char *p;
+
+	p = dest;
+	while (*p != '\0')
+		p++;
+	while (*src != '\0')
 	{
-		if (*s1 == *s2)
-		{
-			s1++;
-			s2++;
-			continue ;
-		}
-		else
-			return (*s1 - *s2);
+		*p = *src;
+		p++;
+		src++;
 	}
-	return (*s1 - *s2);
+	*p = '\0';
+	return (dest);
 }

@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/02 15:13:52 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/02 15:15:14 by gabrlee          ###   ########.fr       */
+/*   Created: 2026/06/02 15:42:53 by gabrlee           #+#    #+#             */
+/*   Updated: 2026/06/02 15:51:09 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-int	ft_strcmp(char *s1, char *s2)
+char	*ft_strcat(char *dest, char *src);
+
+int	main(void)
 {
-	while (*s1 != '\0' || *s2 != '\0')
-	{
-		if (*s1 == *s2)
-		{
-			s1++;
-			s2++;
-			continue ;
-		}
-		else
-			return (*s1 - *s2);
-	}
-	return (*s1 - *s2);
+	//Test//
+	//Test 1: mixed alpha and numeric
+	char dest[] = "ab";
+	char src[] = "12";
+	char *result[99];
+	///////
+	printf("dest: %s\n",dest);
+	printf("dest: %s\n",src);
+	*result = ft_strcat(dest, src);
+	printf("result: %s\n", *result);
+	return (0);
 }
