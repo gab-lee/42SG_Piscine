@@ -5,37 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/02 13:06:57 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/02 15:15:34 by gabrlee          ###   ########.fr       */
+/*   Created: 2026/06/02 15:42:53 by gabrlee           #+#    #+#             */
+/*   Updated: 2026/06/03 16:18:15 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdio.h>
 
-int	ft_strcmp(char *s1, char *s2);
+char	*ft_strlcat(char *dest, char *src, unsigned int nb);
 
 int	main(void)
 {
-	//testing
-	//test case 1: empty string
-	//char	s1[] = "";
-	//char	s2[] = "";
-	//test case 2: Characters 1 apart
-	//char	s1[] = "A";
-	//char	s2[] = "B";
-	//test case 3: Same char diff length
-	//char	s1[] = "AAAAA";
-	//char	s2[] = "A";
-	//test case 4: diff char diff length
-	char	s1[] = "AB";
-	char	s2[] = "AAA";
-	//
-	int	n = ft_strcmp(s1,s2);
-	printf("----TEST-CASE----");
-	printf("S1: %s\n", s1);
-	printf("S2: %s\n", s2);
-	printf("value: %d", n);
-	printf("-----------------");
+	//Test//
+	//Test 1: mixed alpha and numeric
+	char dest[] = "abc";
+	char src[] = "123456";
+	unsigned int	nb = 10;
+	char *result[99];
+	///////
+	printf("dest: %s\n", dest);
+	printf("dest: %s\n", src);
+	*result = ft_strlcat(dest, src, nb);
+	printf("result: %s\n", *result);
 	return (0);
 }
