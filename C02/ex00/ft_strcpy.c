@@ -6,22 +6,21 @@
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 09:57:03 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/02 12:19:30 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/03 13:15:26 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
 char	*ft_strcpy(char *dest, char *str)
 {
-	char	*p;
+	char	*temp;
 
-	p = dest;
+	temp = dest;
 	while (*str != '\0')
 	{
-		*p = *str;
+		*temp = *str;
 		str++;
-		p++;
+		temp++;
 	}
+	*temp = '\0';
 	return (dest);
 }

@@ -6,23 +6,13 @@
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 12:28:59 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/02 12:25:46 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/03 14:53:56 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_char_is_numeric(char *c)
-{
-	if (*c >= '0' && *c <= '9')
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
-}
+int	ft_char_is_numeric(char *c);
 
 int	ft_str_is_numeric(char *str)
 {
@@ -34,9 +24,12 @@ int	ft_str_is_numeric(char *str)
 			continue ;
 		}
 		else
-		{
 			return (0);
-		}
 	}
 	return (1);
+}
+
+int	ft_char_is_numeric(char *c)
+{
+	return (*c >= '0' && *c <= '9');
 }

@@ -6,37 +6,28 @@
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 12:28:59 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/02 12:24:29 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/03 14:44:36 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	ft_is_alpha(char *c)
-{
-	if ((*c >= 'a' && *c <= 'z') || (*c >= 'A' && *c <= 'Z'))
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
-}
+int	ft_is_char_alpha(char *c);
 
 int	ft_str_is_alpha(char *str)
 {
 	while (*str != '\0')
 	{
-		if (ft_is_alpha(str))
+		if (ft_is_char_alpha(str))
 		{
 			str++;
 			continue ;
 		}
 		else
-		{
 			return (0);
-		}
 	}
 	return (1);
+}
+
+int	ft_is_char_alpha(char *c)
+{
+	return ((*c >= 'a' && *c <= 'z') || (*c >= 'A' && *c <= 'Z'));
 }

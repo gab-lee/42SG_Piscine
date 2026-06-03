@@ -10,22 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+void	ft_uppercase(char *c);
 
-void	ft_char_up_lowercase(char *c)
+char	*ft_strupcase(char *str)
 {
-	if (*c >= 'a' && *c <= 'z')
+	char	*temp;
+
+	temp = str;
+	while (*temp != '\0')
 	{
-		*c = *c - 32;
+		ft_uppercase(*temp);
+		temp++;
 	}
+	return (str);
 }
 
-int	ft_strupcase(char *str)
+void	ft_uppercase(char *c)
 {
-	while (*str != '\0')
-	{
-		ft_char_up_lowercase(str);
-		str++;
-	}
-	return (1);
+	if (*c >= 'a' && *c <= 'z')
+		*c = *c - 32;
 }

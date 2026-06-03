@@ -6,26 +6,27 @@
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 12:28:59 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/02 12:35:02 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/03 15:18:28 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+void	ft_lowercase(char *c);
 
-void	ft_char_low_uppercase(char *c)
+char	*ft_strlowcase(char *str)
 {
-	if (*c >= 'A' && *c <= 'Z')
+	char	*temp;
+
+	temp = str;
+	while (*temp != '\0')
 	{
-		*c = *c + 32;
+		ft_lowercase(*temp);
+		temp++;
 	}
+	return (str);
 }
 
-int	ft_strlowcase(char *str)
+void	ft_lowercase(char *c)
 {
-	while (*str != '\0')
-	{
-		ft_char_low_uppercase(str);
-		str++;
-	}
-	return (1);
+	if (*c >= 'A' && *c <= 'Z')
+		*c = *c + 32;
 }

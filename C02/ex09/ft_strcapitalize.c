@@ -6,11 +6,49 @@
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 12:28:59 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/02 12:37:11 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/03 15:20:19 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+int		ft_is_char_alpha_numeric(char *c);
+void	ft_lowercase(char *c);
+void	ft_uppercase(char *c);
+
+char	*ft_strcapitalize(char *str)
+{
+	int		cap;
+	char	*temp;
+
+	temp = str;
+	cap = 1;
+	while (*temp != '\0')
+	{
+		if (ft_is_char_alpha_numeric(temp))
+		{
+			if (cap)
+				ft_uppercase(temp, *cap);
+			else
+				ft_char_up_lowercase(temp);
+		}
+		else
+			cap = 1;
+		temp++;
+	}
+	return (str);
+}
+
+void	ft_uppercase(char *c, int *cap)
+{
+	if (*c >= 'a' && *c <= 'z')
+		*c = *c - 32;
+	*cap = 0;
+}
+
+void	ft_lowercase(char *c)
+{
+	if (*c >= 'A' && *c <= 'Z')
+		*c = *c + 32;
+}
 
 int	ft_is_char_alpha_numeric(char *c)
 {
@@ -20,44 +58,4 @@ int	ft_is_char_alpha_numeric(char *c)
 		return (1);
 	else
 		return (0);
-}
-
-void	ft_char_low_uppercase(char *c)
-{
-	if (*c >= 'a' && *c <= 'z')
-	{
-		*c = *c - 32;
-	}
-}
-
-void	ft_char_up_lowercase(char *c)
-{
-	if (*c >= 'A' && *c <= 'Z')
-	{
-		*c = *c + 32;
-	}
-}
-
-int	ft_strcapitalize(char *str)
-{
-	int	cap;
-
-	cap = 1;
-	while (*str != '\0')
-	{
-		if (ft_is_char_alpha_numeric(str))
-		{
-			if (cap)
-			{
-				ft_char_low_uppercase(str);
-				cap = 0;
-			}
-			else
-				ft_char_up_lowercase(str);
-		}
-		else
-			cap = 1;
-		str++;
-	}
-	return (1);
 }

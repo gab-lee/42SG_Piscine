@@ -20,6 +20,7 @@ int	main(void)
 	int		n;
 	char	str[] = "123455";
 	
+	printf("----TEST-CASE----\n");
 	n = ft_str_is_numeric(str);
 	printf("%d\n", n);
 	return (0);

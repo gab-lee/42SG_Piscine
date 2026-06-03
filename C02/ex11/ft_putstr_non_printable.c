@@ -12,36 +12,8 @@
 
 #include <unistd.h>
 
-int	ft_is_char_printable(char *c)
-{
-	if (*c >= 32 && *c < 127)
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
-}
-
-void	ft_put_hexadecimal(char *c)
-{
-	char	a;
-
-	write(1, "\\", 1);
-	a = *c / 16 + '0';
-	write(1, &a, 1);
-	if (*c % 16 < 10)
-	{
-		a = *c % 16 + '0';
-		write(1, &a, 1);
-	}
-	else
-	{
-		a = *c % 16 - 10 + 'a';
-		write(1, &a, 1);
-	}
-}
+int	ft_is_char_printable(char *c);
+void	ft_put_hexadecimal(char *c);
 
 void	ft_putstr_non_printable(char *str)
 {
@@ -53,4 +25,31 @@ void	ft_putstr_non_printable(char *str)
 			ft_put_hexadecimal(str);
 		str++;
 	}
+}
+
+int	ft_is_char_printable(char *c)
+{
+	if (*c >= 32 && *c <= 126)
+		return (1);
+	else
+		return (0);
+}
+
+void	ft_put_hexadecimal(char *c)
+{
+	char	a;
+
+	write(1, "\\", 1);
+	if (*c / 16 <= 9)
+		a = *c / 16 + '0';
+		write(1, &a, 1);
+	else
+		a = *c / 16 + 'a';
+		write(1, &a, 1);
+	if (*c % 16 <= 9)
+		a = *c / 16 + '0';
+		write(1, &a, 1);
+	else
+		a = *c % 16 + 'a';
+		write(1, &a, 1);
 }
