@@ -1,32 +1,43 @@
 #include <unistd.h>
 
+int ft_char_in_str(char c, char *str);
+char *ft_strcat(char *dest, char c);
 int ft_get_base_len(char *base);
-char *ft_strcat(char *dest, char *src);
-void ft_putstr(char *str);
+void ft_put_revstr(char *str);
 
 void ft_putnbr_base(int nbr, char *base)
 {
-	int		base_len;
-	int		pos;
-	char	*result;
+	int base_len;
+	char buff[64];
+	char *result;
+	unsigned int	temp;
 
-	pos = 1;
+	result = buff;
+	*result = '\0';
 	base_len = ft_get_base_len(base);
-	if (!base_len)
+	if (base_len <= 1)
 		return;
 	if (nbr == 0)
-		return (base[0]);
+	{
+		write(1, &base[0], 1);
+		return ;
+	}
 	if (nbr < 0)
 	{
-		pos = -1;
-		write(1,"-",1);
+		write(1, "-", 1);
+		if (nbr > -2147483648)
+			temp = nbr * -1;
+		else
+			temp = (unsigned int)nbr;
 	}
-	while (nbr) 
+	else
+		temp = nbr;
+	while (temp)
 	{
-		result = ft_strcat(result, ('0' + (nbr % base_len) * pos);
-		nbr = nbr / base_len;
+		ft_strcat(result, (base[temp % base_len]));
+		temp = temp / base_len;
 	}
-	ft_putstr(result);
+	ft_put_revstr(result);
 }
 
 int ft_get_base_len(char *base)
@@ -45,7 +56,7 @@ int ft_get_base_len(char *base)
 		len++;
 		base++;
 	}
-	return len;
+	return (len);
 }
 
 char *ft_strcat(char *dest, char c)
@@ -55,30 +66,32 @@ char *ft_strcat(char *dest, char c)
 	p = dest;
 	while (*p != '\0')
 		p++;
-	while (*src != '\0')
-	{
-		*p = *src;
-		p++;
-		src++;
-	}
+	*p = c;
+	p++;
 	*p = '\0';
 	return (dest);
 }
 
-void ft_putstr(char *str)
+void ft_put_revstr(char *str)
 {
+	char	*p;
+
+	p = str;
 	while (*str != '\0')
+		str++;
+	str--;
+	while (str != p-1)
 	{
 		write(1, str, 1);
-		str++;
+		str--;
 	}
 }
 
 int ft_char_in_str(char c, char *str)
 {
 	while (*str != '\0')
-	{	
-		if(*str == c)
+	{
+		if (*str == c)
 			return (1);
 		str++;
 	}

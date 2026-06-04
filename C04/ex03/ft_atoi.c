@@ -1,30 +1,26 @@
-#include <stdio.h>
-char	*ft_rm_not_nbr(char *str, int *is_pos);
+char	*ft_rm_not_nbr(char *str, int *neg);
 
 int	ft_atoi(char *str)
 {
 	int	result;
-	int	is_pos;
+	int	neg;
 	
 	result = 0;
-	is_pos = 1;
-	str = ft_rm_not_nbr(str, &is_pos);
+	neg = 0;
+	str = ft_rm_not_nbr(str, &neg);
 	if(!str)
 		return (result);
 	while (*str != '\0' && *str >= '0' && *str <= '9')
 	{
-		if (!result)
-			result += (*str - '0');
-		else
-			result = result * 10 + (*str - '0');
+		result = result * 10 + (*str - '0');
 		str++;
 	}
-	if (!is_pos)
+	if (neg % 2 == 1)
 		result = result * -1;
 	return (result);
 }
 
-char	*ft_rm_not_nbr(char *str, int *is_pos)
+char	*ft_rm_not_nbr(char *str, int *neg)
 {
 	int	whitespace;
 
@@ -35,9 +31,11 @@ char	*ft_rm_not_nbr(char *str, int *is_pos)
 			return 0;
 		if (*str == ' ' && !whitespace)
 			return 0;
-		if (*str == '-' || *str == '+')
+		if (*str == '-')
+		{
 			whitespace = 0;
-			*is_pos = *is_pos + (44 - *str);
+			(*neg)++;
+		}
 		str++;		
 	}
 	return (str);
