@@ -20,9 +20,9 @@ int main(void)
 	// Test Case
 	char *src[] =
 		{"Hello",
-		 "  a b !6721839 ",
+		 "1234567",
 		 "\0",
-		 "fads 546789",
+		 "fads7546789",
 		};
 	int size[] =
 		{2,

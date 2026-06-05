@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdio.h>
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n);
@@ -25,23 +24,26 @@ int main(void)
 		 "  a b !6721839 ",
 		 "\0",
 		 "fads 546789",
+		 "fdsa"
 		};
 	int n[] =
 		{6,
 		7,
 		6,
 		0,
+		-1,
 		};
 
 	int i;
 
 	i = 0;
-	while (i < 4)
+	while (i < 5)
 	{
 		printf("----TEST-CASE-%d----\n", i);
 		printf("Src: %s\n", src[i]);
 		printf("n: %d\n", n[i]);
-		printf("cpy %s\n", ft_strncpy(dest,src[i],n[i]));
+		ft_strncpy(dest,src[i],n[i]);
+		printf("Dest: %s\n", dest);
 		printf("\n-------------------\n");
 		i++;
 	}

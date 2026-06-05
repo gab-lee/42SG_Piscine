@@ -12,22 +12,16 @@
 
 unsigned int	ft_strlcpy(char *dest, char *str, unsigned int size)
 {
-	int	len;
+	unsigned int	i;
 
-	len = 0;
-	if (!size)
-		return (0);
-	while (*str != '\0')
+	i = 0;
+	if (size > 2147483647)
+		return (i);
+	while (str[i] != '\0' &&  i < (size -1))
 	{
-		if (size > 1)
-		{
-			*dest = *str;
-			dest++;
-			size--;
-		}
-		str++;
-		len++;
+		dest[i] = str[i];
+		i++;
 	}
-	*dest = '\0';
-	return (len);
+	dest[i] = '\0';
+	return (i);
 }
