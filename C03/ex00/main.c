@@ -15,27 +15,32 @@
 
 int	ft_strcmp(char *s1, char *s2);
 
-int	main(void)
+int main(void)
 {
-	//testing
-	//test case 1: empty string
-	//char	s1[] = "";
-	//char	s2[] = "";
-	//test case 2: Characters 1 apart
-	//char	s1[] = "A";
-	//char	s2[] = "B";
-	//test case 3: Same char diff length
-	//char	s1[] = "AAAAA";
-	//char	s2[] = "A";
-	//test case 4: diff char diff length
-	char	s1[] = "AB";
-	char	s2[] = "AAA";
-	//
-	int	n = ft_strcmp(s1,s2);
-	printf("----TEST-CASE----");
-	printf("S1: %s\n", s1);
-	printf("S2: %s\n", s2);
-	printf("value: %d", n);
-	printf("-----------------");
+	//---test-cases---//
+	// Test Case
+	char *str1[] =
+		{"Hello",
+		 "A", 
+		 "AAB",
+		};
+	char *str2[] =
+		{"Hello",
+		 "B", 
+		 "AAA",
+		};
+
+	int i;
+
+	i = 0;
+	while (i < 3)
+	{
+		printf("----TEST-CASE-%d----\n", i);
+		printf("str1: %s\n", str1[i]);
+		printf("str2: %s\n", str2[i]);
+		printf("diff: %d\n", ft_strcmp(str1[i],str2[i]));
+		printf("\n-------------------\n");
+		i++;
+	}
 	return (0);
 }

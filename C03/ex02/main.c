@@ -14,17 +14,27 @@
 
 char	*ft_strcat(char *dest, char *src);
 
-int	main(void)
+int main(void)
 {
-	//Test//
-	//Test 1: mixed alpha and numeric
-	char dest[] = "ab";
-	char src[] = "12";
-	char *result[99];
-	///////
-	printf("dest: %s\n",dest);
-	printf("dest: %s\n",src);
-	*result = ft_strcat(dest, src);
-	printf("result: %s\n", *result);
+	//---test-cases---//
+	// Test Case
+	char buff[50];
+	char *str[] =
+		{"Hello",
+		 "B", 
+		 "AAA",
+		};
+
+	int i;
+
+	i = 0;
+	while (i < 3)
+	{
+		printf("----TEST-CASE-%d----\n", i);
+		printf("str2: %s\n", str[i]);
+		printf("Cat: %s\n", ft_strcat(buff,str[i]));
+		printf("\n-------------------\n");
+		i++;
+	}
 	return (0);
 }

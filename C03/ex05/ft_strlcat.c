@@ -22,7 +22,7 @@ unsigned int	*ft_strlcat(char *dest, char *src, unsigned int size)
 	else
 		while (*p != '\0')
 			p++;
-	while (*src != '\0' && size-1)
+	while (*src != '\0' && size - 1)
 	{
 		*p = *src;
 		p++;

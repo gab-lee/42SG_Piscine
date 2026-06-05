@@ -12,7 +12,7 @@
 #include <unistd.h>
 
 int		ft_is_char_printable(char *c);
-void	ft_put_hexadecimal(char *c);
+void	ft_put_hexadecimal(unsigned char *c);
 
 void	ft_putstr_non_printable(char *str)
 {
@@ -21,7 +21,7 @@ void	ft_putstr_non_printable(char *str)
 		if (ft_is_char_printable(str))
 			write(1, str, 1);
 		else
-			ft_put_hexadecimal(str);
+			ft_put_hexadecimal((unsigned char *)str);
 		str++;
 	}
 }
@@ -34,7 +34,7 @@ int	ft_is_char_printable(char *c)
 		return (0);
 }
 
-void	ft_put_hexadecimal(char *c)
+void	ft_put_hexadecimal(unsigned char *c)
 {
 	char	a;
 

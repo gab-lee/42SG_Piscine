@@ -12,6 +12,8 @@
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
+	if (!n)
+		return (0);
 	while ((*s1 != '\0' || *s2 != '\0') && n - 1)
 	{
 		if (*s1 != *s2)
@@ -22,7 +24,6 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 			s2++;
 			n--;
 		}
-		else
 	}
 	return (*s1 - *s2);
 }
