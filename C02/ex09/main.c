@@ -10,16 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdio.h>
 
-int	ft_strcapitalize(char *str);
+char	*ft_strcapitalize(char *str);
 
 int	main(void)
 {
 	char	str[] = "heLLlo woRld, i am gab";
 	
-	ft_strcapitalize(str);
-	printf("%s\n", str);
+	printf("----TEST-CASE-1----\n");
+	printf("str: %s\n", str);
+	printf("upper: %s\n", ft_strcapitalize(str));
+	printf("\n-------------------\n");
 	return (0);
 }

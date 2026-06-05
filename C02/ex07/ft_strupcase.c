@@ -19,7 +19,7 @@ char	*ft_strupcase(char *str)
 	temp = str;
 	while (*temp != '\0')
 	{
-		ft_uppercase(*temp);
+		ft_uppercase(temp);
 		temp++;
 	}
 	return (str);

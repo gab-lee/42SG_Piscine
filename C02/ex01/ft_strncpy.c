@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_add_null(char *p, unsigned int n);
-
 char	*ft_strncpy(char *dest, char *str, unsigned int n)
 {
 	char	*p;
@@ -26,18 +24,11 @@ char	*ft_strncpy(char *dest, char *str, unsigned int n)
 		p++;
 		n--;
 	}
-	ft_add_null(p, n);
-	return (dest);
-}
-
-void	ft_add_null(char *p, unsigned int n)
-{
-	if (!n)
-		*p = '\0';
 	while (n)
 	{
 		*p = '\0';
 		p++;
 		n--;
-	}
+	}	
+	return (dest);
 }

@@ -10,20 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdio.h>
 
 int	ft_str_is_printable(char *str);
 
-int	main(void)
+int main(void)
 {
-	//char	str[]="abcd!!!efg"; //mix of printable characters
-	char	str[2];
-	str[0] = 1; //non priintable character
-	str[1] = 79;
+	//---test-cases---//
+	// Test Case
+	char *str[] =
+		{"Hello",
+		 "  a b ! \101 6721 39 ", 
+		 "FASFSAFF \31 ASDSA",
+		 "ASDFSA    A\234SDAS",
+		 "fads 546789",
+		};
 
-	int n = ft_str_is_printable(str);
-	printf("Test string: %s\n", str);
-	printf("Is printable? %d\n", n);
+	int i;
+
+	i = 0;
+	while (i < 5)
+	{
+		printf("----TEST-CASE-%d----\n", i);
+		printf("str: %s\n", str[i]);
+		printf("isvalid: %d\n", ft_str_is_printable(str[i]));
+		printf("\n-------------------\n");
+		i++;
+	}
 	return (0);
 }

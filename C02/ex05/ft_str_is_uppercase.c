@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_uppercase(char *c);
+int	ft_is_char_uppercase(char *c);
 
-int	ft_str_is_lowercase(char *str)
+int	ft_str_is_uppercase(char *str)
 {
 	while (*str != '\0' && ft_is_char_uppercase(str))
 		str++;

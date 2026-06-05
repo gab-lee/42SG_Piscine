@@ -12,7 +12,7 @@
 
 int		ft_is_char_alpha_numeric(char *c);
 void	ft_lowercase(char *c);
-void	ft_uppercase(char *c);
+void	ft_uppercase(char *c, int *cap);
 
 char	*ft_strcapitalize(char *str)
 {
@@ -26,9 +26,9 @@ char	*ft_strcapitalize(char *str)
 		if (ft_is_char_alpha_numeric(temp))
 		{
 			if (cap)
-				ft_uppercase(temp, *cap);
+				ft_uppercase(temp, &cap);
 			else
-				ft_char_up_lowercase(temp);
+				ft_lowercase(temp);
 		}
 		else
 			cap = 1;

@@ -19,7 +19,7 @@ char	*ft_strlowcase(char *str)
 	temp = str;
 	while (*temp != '\0')
 	{
-		ft_lowercase(*temp);
+		ft_lowercase(temp);
 		temp++;
 	}
 	return (str);

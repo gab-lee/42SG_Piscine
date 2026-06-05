@@ -9,10 +9,9 @@
 /*   Updated: 2026/06/02 12:42:05 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <unistd.h>
 
-int	ft_is_char_printable(char *c);
+int		ft_is_char_printable(char *c);
 void	ft_put_hexadecimal(char *c);
 
 void	ft_putstr_non_printable(char *str)
@@ -42,14 +41,12 @@ void	ft_put_hexadecimal(char *c)
 	write(1, "\\", 1);
 	if (*c / 16 <= 9)
 		a = *c / 16 + '0';
-		write(1, &a, 1);
 	else
-		a = *c / 16 + 'a';
-		write(1, &a, 1);
+		a = *c / 16 - 10 + 'a';
+	write(1, &a, 1);
 	if (*c % 16 <= 9)
-		a = *c / 16 + '0';
-		write(1, &a, 1);
+		a = *c % 16 + '0';
 	else
-		a = *c % 16 + 'a';
-		write(1, &a, 1);
+		a = *c % 16 - 10 + 'a';
+	write(1, &a, 1);
 }

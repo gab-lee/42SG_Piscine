@@ -10,20 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdio.h>
 
-int	ft_putstr_non_printable(char *str);
+void	ft_putstr_non_printable(char *str);
 
-int	main(void)
+int main(void)
 {
-	//char str[]="abcd!!!efg"; //mix of printable characters
-	char str[4];
-	str[0] = 1; //non priintable character
-	str[1] = 65; //A
-	str[2] = 127; //delete key
-	str[3] = 88; //X
-	printf("Test string: %s\n", str);
-	ft_putstr_non_printable(str);
+	//---test-cases---//
+	// Test Case
+		char str[] = "Hello\nHow are you?";
+		//char str[6];
+		//str[0] = 2;
+		//str[1] = 65; //A
+		//str[2] = 127;//del
+		//str[3] = 102;
+		//str[4] = 77;
+		//str[5] = '\0';
+		printf("----TEST-CASE-0----\n");
+		ft_putstr_non_printable(str);
+		printf("\n-------------------\n");
 	return (0);
 }

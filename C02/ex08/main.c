@@ -10,16 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdio.h>
 
-int	ft_strlowcase(char *str);
+char	*ft_strlowcase(char *str);
 
-int	main(void)
+int main(void)
 {
-	char	str[] = "aABCVd!!!efg";
-	
-	ft_strlowcase(str);
-	printf("%s\n", str);
+	//---test-cases---//
+	// Test Case
+	char Buff[99];
+	char *str;
+	str = Buff;
+	Buff[0] = 'A';
+	Buff[1] = 'a';
+	Buff[2] = ' ';
+	Buff[3] = 'b';
+	int i;
+
+	i = 0;
+	while (i < 1)
+	{
+		printf("----TEST-CASE-%d----\n", i);
+		printf("str: %s\n", str);
+		printf("upper: %s\n", ft_strlowcase(str));
+		printf("\n-------------------\n");
+		i++;
+	}
 	return (0);
 }

@@ -15,12 +15,29 @@
 
 int	ft_str_is_lowercase(char *str);
 
-int	main(void)
+int main(void)
 {
-	int		n;
-	char	str[] = "abcdefg";
-	
-	n = ft_str_is_lowercase(str);
-	printf("%d\n", n);
+	//---test-cases---//
+	// Test Case
+	char *str[] =
+		{"Hello",
+		 "  a b !6721839 ",
+		 "\0",
+		 "abcdedfg",
+		 "adbv    adsf",
+		 "fads 546789",
+		};
+
+	int i;
+
+	i = 0;
+	while (i < 6)
+	{
+		printf("----TEST-CASE-%d----\n", i);
+		printf("str: %s\n", str[i]);
+		printf("isvalid: %d\n", ft_str_is_lowercase(str[i]));
+		printf("\n-------------------\n");
+		i++;
+	}
 	return (0);
 }

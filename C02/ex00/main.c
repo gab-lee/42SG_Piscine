@@ -15,15 +15,28 @@
 
 char	*ft_strcpy(char	*dest, char *src);
 
-int	main(void)
+int main(void)
 {
-	char	src[] = "Aa !567 ihi!"; //test case is alphanumeric including special chars
-	char	dest[99];
-	
-	printf("\n---TEST CASE 1---\n");
-	ft_strcpy(dest, src);
-	printf("Src : %s\n", src);
-	printf("Dest: %s\n", dest);
-	printf("-----------------\n");
+	//---test-cases---//
+	// Test Case
+	char dest[99];
+	char *src[] =
+		{"Hello",
+		 "  a b !6721839 ",
+		 "\0",
+		 "fads 546789",
+		};
+	int i;
+
+	i = 0;
+	while (i < 4)
+	{
+		printf("----TEST-CASE-%d----\n", i);
+		printf("Src %s\n", src[i]);
+		printf("cpy %s\n", ft_strcpy(dest,src[i]));
+		printf("\n-------------------\n");
+		i++;
+	}
 	return (0);
 }
+

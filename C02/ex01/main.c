@@ -15,29 +15,35 @@
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n);
 
-int	main(void)
+int main(void)
 {
-	unsigned int	n;
-	char	dest[99];
-	char *p = dest;
-	
-	printf("\n---TEST-CASE---\n");
-	//n = 5; char src[] = "abcdef"; //shorter than src 
-	//n = 10; char src[] = "abcdef"; //longer than src
-	n = 0; char src[] = "abcdef"; //0
-	ft_strncpy(dest, src, n);
-	printf("n   : %d\n", n);
-	printf("Src : %s\n", src);
-	printf("Dest: %s\n", dest);
-	printf("Dest: \n");
-	while (n)
+	//---test-cases---//
+	// Test Case
+	char dest[99];
+	char *src[] =
+		{"Hello",
+		 "  a b !6721839 ",
+		 "\0",
+		 "fads 546789",
+		};
+	int n[] =
+		{6,
+		7,
+		6,
+		0,
+		};
+
+	int i;
+
+	i = 0;
+	while (i < 4)
 	{
-		if(*p == '\0')
-			write(1,"0",1); 
-		else
-			write(1,p,1);
-		p++; n--;
+		printf("----TEST-CASE-%d----\n", i);
+		printf("Src: %s\n", src[i]);
+		printf("n: %d\n", n[i]);
+		printf("cpy %s\n", ft_strncpy(dest,src[i],n[i]));
+		printf("\n-------------------\n");
+		i++;
 	}
-	printf("\n---------------\n");
 	return (0);
 }

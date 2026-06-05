@@ -15,16 +15,29 @@
 
 int	ft_str_is_uppercase(char *str);
 
-int	main(void)
+int main(void)
 {
-	int		n;
-	//char	str[]="abcdefg"; //only lower
-	//char	str[] = "ABCDEFG"; //only uppper
-	//char	str[] = "!@#$%^&*"; //special characters
-	char	str[] = "abCDEDvdas"; //mix of characters
-	
-	n = ft_str_is_uppercase(str);
-	printf("testcase: %s \n", str);
-	printf("Is Upper?: %d \n", n);
+	//---test-cases---//
+	// Test Case
+	char *str[] =
+		{"Hello",
+		 "  a b !6721839 ",
+		 "\0",
+		 "FASFSAFFASDSA",
+		 "ASDFSA    ASDAS",
+		 "fads 546789",
+		};
+
+	int i;
+
+	i = 0;
+	while (i < 6)
+	{
+		printf("----TEST-CASE-%d----\n", i);
+		printf("str: %s\n", str[i]);
+		printf("isvalid: %d\n", ft_str_is_uppercase(str[i]));
+		printf("\n-------------------\n");
+		i++;
+	}
 	return (0);
 }

@@ -10,23 +10,40 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdio.h>
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
 
-int	main(void)
+int main(void)
 {
-	int		size;
-	char	src[] = "abc321321de";
-	char	dest[99];
-	int		len;
+	//---test-cases---//
+	// Test Case
+	char *src[] =
+		{"Hello",
+		 "  a b !6721839 ",
+		 "\0",
+		 "fads 546789",
+		};
+	int size[] =
+		{2,
+		7,
+		6,
+		0,
+		};
 
-	size = 6;
-	len = ft_strlcpy(dest, src, size);
-	printf("src: %s\n", src);
-	printf("dest: %s\n", dest);
-	printf("Size: %d\n", size);
-	printf("Length: %d\n", len);
+	int i;
+
+	i = 0;
+	while (i < 4)
+	{
+		char dest[99];
+		printf("----TEST-CASE-%d----\n", i);
+		printf("Src: %s\n", src[i]);
+		printf("size: %d\n", size[i]);
+		printf("len: %u\n", ft_strlcpy(dest,src[i],size[i]));
+		printf("Des: %s\n", dest);
+		printf("\n-------------------\n");
+		i++;
+	}
 	return (0);
 }
