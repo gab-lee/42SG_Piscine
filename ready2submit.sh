@@ -1,5 +1,5 @@
-dir=C03
-#repo=git@vogsphere.42singapore.sg:vogsphere/intra-uuid-b6f44a9a-8d62-4e7d-a9c7-a770846a8dae-7449096-gabrlee
+dir=C04
+#repo=git@vogsphere.42singapore.sg:vogsphere/intra-uuid-49b98170-413b-4e06-85ca-aacea36a76d2-7460160-gabrlee
 cp -r $dir ../$dir
 cd ../$dir
 mv gitignore .gitignore 
