@@ -20,19 +20,24 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	if (size == 0)
 		return (len);
 	else
-		while (dest[len] != '\0')
+		while (dest[len] != '\0' && len < size)
 			len++;
-	while (src[i] != '\0' && len < (size - 1))
+	if (size >= len)
 	{
-		dest[len] = src[i];
-		len++;
-		i++;
+		while (src[i] != '\0' && len < (size - 1))
+		{
+			dest[len] = src[i];
+			len++;
+			i++;
+		}
+		dest[len] = '\0';
 	}
-	dest[len] = '\0';
-	while (src[i] != '\0')
-	{
-		len++;
-		i++;
-	}
+	else 
+		len = size;
+	while (src[i] != '\0' && len < size)
+		{
+			len++;
+			i++;
+		}
 	return (len);
 }

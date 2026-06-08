@@ -28,7 +28,7 @@ char	*ft_strstr(char *str, char *to_find)
 
 int	ft_needle_in_haystack(char *needle, char *haystack)
 {
-	while (*needle == *haystack)
+	while (*needle == *haystack && *haystack != '\0')
 	{
 		needle++;
 		haystack++;

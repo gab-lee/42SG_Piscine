@@ -6,7 +6,7 @@
 /*   By: gabrlee <gabrlee@student.42singapore.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 15:57:53 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/03 15:57:57 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/08 11:11:35 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(void)
     //test 2: Mid String
     //char haystack[] = "abcdef"; char needle[] = "cd"; 
     //test 2: Not in String
-    char haystack[] = "abcdef"; char needle[] = "xx"; 
+    char haystack[] = "abcdef"; char needle[] = "abcdefghij"; 
     //
     printf("----TEST-CASE----\n");
     printf("Haystack: %s\n", haystack);
