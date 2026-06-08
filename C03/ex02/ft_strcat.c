@@ -18,9 +18,7 @@ char	*ft_strcat(char *dest, char *src)
 	if (!*src)
 		return (dest);
 	while (*p != '\0')
-	{
 		p++;
-	}
 	while (*src != '\0')
 	{
 		*p = *src;

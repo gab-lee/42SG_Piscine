@@ -14,7 +14,7 @@ int	ft_needle_in_haystack(char *needle, char *haystack);
 
 char	*ft_strstr(char *str, char *to_find)
 {
-	if (!to_find)
+	if (*to_find == '\0')
 		return (str);
 	while (*str != '\0')
 	{

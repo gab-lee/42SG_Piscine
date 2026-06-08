@@ -10,26 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	*ft_strlcat(char *dest, char *src, unsigned int size)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int		len;
-	char	*p;
+	unsigned int	len;
+	unsigned int 	i;
 
 	len = 0;
-	p = dest;
-	if (!size)
+	i = 0;
+	if (size == 0)
 		return (len);
 	else
-		while (*p != '\0')
-			p++;
-	while (*src != '\0' && size - 1)
+		while (dest[len] != '\0')
+			len++;
+	while (src[i] != '\0' && len < (size - 1))
 	{
-		*p = *src;
-		p++;
-		src++;
-		size--;
+		dest[len] = src[i];
 		len++;
+		i++;
 	}
-	*p = '\0';
+	dest[len] = '\0';
+	while (src[i] != '\0')
+	{
+		len++;
+		i++;
+	}
 	return (len);
 }

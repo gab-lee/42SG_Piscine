@@ -6,7 +6,7 @@
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 15:42:53 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/02 15:57:07 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/08 10:00:32 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ int main(void)
 {
 	//---test-cases---//
 	// Test Case
-	char buff[50];
+	char buff[] = "Hello";
 	char *str[] =
 		{"Hello",
-		 "B", 
+		 "World", 
 		 "AAA",
 		};
 	int n[] =

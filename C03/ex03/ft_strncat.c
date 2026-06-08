@@ -16,21 +16,14 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 
 	p = dest;
 	while (*p != '\0')
-	{
 		p++;
-	}
-	while (*src != '\0' && nb)
+	while (*src != '\0' && nb > 0)
 	{
 		*p = *src;
 		p++;
 		src++;
 		nb--;
 	}
-	while (nb)
-	{
-		*p = '\0';
-		p++;
-		nb--;
-	}
+	*p = '\0';
 	return (dest);
 }
