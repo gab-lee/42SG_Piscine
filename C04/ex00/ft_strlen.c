@@ -6,13 +6,13 @@
 /*   By: gabrlee <gabrlee@student.42singapore.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 17:26:10 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/03 17:27:32 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/08 13:52:04 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strlen(char *str)
 {
-	int	 len;
+	int	len;
 
 	len = 0;
 	while (*str != '\0')
@@ -20,5 +20,5 @@ int	ft_strlen(char *str)
 		len++;
 		str++;
 	}
-	return len;
+	return (len);
 }

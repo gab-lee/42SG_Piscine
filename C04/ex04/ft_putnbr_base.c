@@ -6,55 +6,59 @@
 /*   By: gabrlee <gabrlee@student.42singapore.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 16:18:33 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/05 16:18:38 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/08 14:23:14 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int ft_char_in_str(char c, char *str);
-char *ft_strcat(char *dest, char c);
-int ft_get_base_len(char *base);
-void ft_put_revstr(char *str);
+int		ft_char_in_str(char c, char *str);
+char	*ft_append_cat(char *dest, char c);
+int		ft_get_base_len(char *base);
+void	ft_put_revstr(char *str);
+int		ft_isneg(int nb);
 
-void ft_putnbr_base(int nbr, char *base)
+void	ft_putnbr_base(int nbr, char *base)
 {
-	int base_len;
-	char buff[64];
-	char *result;
-	unsigned int	temp;
+	int		base_len;
+	char	result[64];
+	int		sign;
+	int		i;
 
-	result = buff;
-	*result = '\0';
+	result[0] = '\0';
+	sign = ft_isneg(nbr);
 	base_len = ft_get_base_len(base);
 	if (base_len <= 1)
-		return;
-	if (nbr == 0)
-	{
-		write(1, &base[0], 1);
 		return ;
-	}
-	if (nbr < 0)
+	if (nbr == 0)
+		write(1, &base[0], 1);
+	while (nbr)
 	{
-		write(1, "-", 1);
-		if (nbr > -2147483648)
-			temp = nbr * -1;
-		else
-			temp = (unsigned int)nbr;
+		ft_append_cat(result, (base[sign * nbr % base_len]));
+		nbr = sign * (nbr / base_len);
+		sign = 1;
 	}
-	else
-		temp = nbr;
-	while (temp)
-	{
-		ft_strcat(result, (base[temp % base_len]));
-		temp = temp / base_len;
-	}
-	ft_put_revstr(result);
+	i = 0;
+	while (result[i] != '\0')
+		i++;
+	while (i--)
+		write(1, &result[i], 1);
 }
 
-int ft_get_base_len(char *base)
+int	ft_isneg(int nb)
 {
-	int len;
+	if (nb < 0)
+	{
+		write(1, "-", 1);
+		return (-1);
+	}
+	else
+		return (1);
+}
+
+int	ft_get_base_len(char *base)
+{
+	int	len;
 
 	len = 0;
 	if (*base == '\0')
@@ -71,35 +75,19 @@ int ft_get_base_len(char *base)
 	return (len);
 }
 
-char *ft_strcat(char *dest, char c)
+char	*ft_append_cat(char *dest, char c)
 {
-	char *p;
+	int	i;
 
-	p = dest;
-	while (*p != '\0')
-		p++;
-	*p = c;
-	p++;
-	*p = '\0';
+	i = 0;
+	while (dest[i] != '\0')
+		i++;
+	dest[i] = c;
+	dest[i + 1] = '\0';
 	return (dest);
 }
 
-void ft_put_revstr(char *str)
-{
-	char	*p;
-
-	p = str;
-	while (*str != '\0')
-		str++;
-	str--;
-	while (str != p-1)
-	{
-		write(1, str, 1);
-		str--;
-	}
-}
-
-int ft_char_in_str(char c, char *str)
+int	ft_char_in_str(char c, char *str)
 {
 	while (*str != '\0')
 	{

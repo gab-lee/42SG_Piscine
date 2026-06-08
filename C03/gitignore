@@ -7,6 +7,6 @@ ex02/*
 ex03/*
 !ex03/ft_strncat.c
 ex04/*
-!ex04/ft-strstr.c
+!ex04/ft_strstr.c
 ex05/*
 !ex05/ft_strlcat.c

@@ -6,7 +6,7 @@
 /*   By: gabrlee <gabrlee@student.42singapore.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 17:26:10 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/03 17:31:12 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/08 13:52:30 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_putstr(char *str)
 {
 	while (*str != '\0')
 	{
-		write(1,str,1);
+		write(1, str, 1);
 		str++;
 	}
 }

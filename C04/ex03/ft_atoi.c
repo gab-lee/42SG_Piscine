@@ -6,7 +6,7 @@
 /*   By: gabrlee <gabrlee@student.42singapore.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 16:18:59 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/05 16:19:01 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/08 13:54:13 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ int	ft_atoi(char *str)
 {
 	int	result;
 	int	neg;
-	
+
 	result = 0;
 	neg = 0;
 	str = ft_rm_not_nbr(str, &neg);
-	if(!str)
+	if (!str)
 		return (result);
 	while (*str != '\0' && *str >= '0' && *str <= '9')
 	{
@@ -40,15 +40,15 @@ char	*ft_rm_not_nbr(char *str, int *neg)
 	while (*str != '\0' && !(*str >= '0' && *str <= '9'))
 	{
 		if (*str != ' ' && *str != '+' && *str != '-')
-			return 0;
+			return (0);
 		if (*str == ' ' && !whitespace)
-			return 0;
+			return (0);
 		if (*str == '-')
 		{
 			whitespace = 0;
 			(*neg)++;
 		}
-		str++;		
+		str++;
 	}
 	return (str);
 }

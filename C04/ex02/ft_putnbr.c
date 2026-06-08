@@ -6,7 +6,7 @@
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 17:12:29 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/05/30 14:55:21 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/08 13:52:49 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int	ft_get_nbrlen(int nbr, int len)
 void	ft_put_digit(int nbr, int len)
 {
 	char	a;
+
 	while (len - 1)
 	{
 		nbr = nbr / 10;
