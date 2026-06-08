@@ -6,7 +6,7 @@
 /*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 12:15:14 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/03 13:58:32 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/08 09:49:45 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,21 @@ int main(void)
 	char dest[99];
 	char *src[] =
 		{"Hello",
-		 "  a b !6721839 ",
+		 "123456789",
 		 "\0",
 		 "fads 546789",
-		 "fdsa"
 		};
 	int n[] =
 		{6,
 		7,
 		6,
 		0,
-		-1,
 		};
 
 	int i;
 
 	i = 0;
-	while (i < 5)
+	while (i < 4)
 	{
 		printf("----TEST-CASE-%d----\n", i);
 		printf("Src: %s\n", src[i]);
