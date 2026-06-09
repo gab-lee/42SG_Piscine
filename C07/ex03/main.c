@@ -3,22 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
+/*   By: gabrlee <gabrlee@student.42singapore.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/28 17:10:08 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/09 10:26:59 by gabrlee          ###   ########.fr       */
+/*   Created: 2026/06/09 11:18:35 by gabrlee           #+#    #+#             */
+/*   Updated: 2026/06/09 11:21:07 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
+char	*ft_strjoin(int size, char **strs, char *sep);
 
-void	ft_putnbr(int nbr);
-
-int	main(void)
+int main(void)
 {
-	int	nbr;
+    char *str;
+    int size;
+    char *arr[] = {"hello", "world", "foo"};
+    char *sep;
 
-	nbr = -2147483648;
-	ft_putnbr(nbr);
-	return (0);
+    size = 3;
+    sep = ", ";
+    str = ft_strjoin(size, arr, sep);
+    printf("str: %s\n", str);
 }

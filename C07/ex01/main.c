@@ -3,22 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
+/*   By: gabrlee <gabrlee@student.42singapore.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/28 17:10:08 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/09 10:26:59 by gabrlee          ###   ########.fr       */
+/*   Created: 2026/06/09 09:49:44 by gabrlee           #+#    #+#             */
+/*   Updated: 2026/06/09 09:56:07 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putnbr(int nbr);
+int *ft_range(int min, int max);
 
 int	main(void)
 {
-	int	nbr;
+	int	min;
+	int max;
+	int i;
+	int *array;
 
-	nbr = -2147483648;
-	ft_putnbr(nbr);
-	return (0);
+	min = 8;
+	max = 32;
+	i = -1;
+	array = ft_range(min, max);
+	while (i++, min + i <= max)
+	{
+		printf("array[%d]:%d\n",i,array[i]);
+	}
+
 }
