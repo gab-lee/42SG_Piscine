@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabrlee <gabrlee@student.42singapore.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/09 15:18:24 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/09 15:18:49 by gabrlee          ###   ########.fr       */
+/*   Created: 2026/06/09 14:45:42 by gabrlee           #+#    #+#             */
+/*   Updated: 2026/06/09 14:49:48 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_factorial(int nb)
-{
-	int	result;
+int ft_ten_queens_puzzle(void);
 
-	if (nb < 0)
-		return (0);
-	result = 1;
-	while (nb)
-	{
-		result = result * nb;
-		nb--;
-	}
-	return (result);
+int	main(void)
+{
+	return (ft_ten_queens_puzzle());
 }
