@@ -1,45 +1,87 @@
-char *ft_rm_not_nbr(char *str, int *neg);
-int ft_nbr_base(int nbr, char *base);
+char *ft_parse_str(char *str, int *neg, char *base);
+int ft_strlen(char *str);
+int ft_validbase(char *base);
+int base_index(char c, char *base);
 
-int ft_atoi_base(char *str, char base)
+int ft_atoi_base(char *str, char *base)
 {
-	int result;
+	long result;
 	int neg;
+	int base_len;
+	char *parse;
 
 	result = 0;
 	neg = 0;
-	str = ft_rm_not_nbr(str, &neg);
-	if (!str)
-		return (result);
-	while (*str != '\0' && *str >= '0' && *str <= '9')
+	parse = ft_parse_str(str, &neg, base);
+	base_len = ft_strlen(base);
+	if (!ft_validbase(base) || base_len < 2)
+		return (0);
+	else if (ft_strlen(parse) == 1 && parse[0] == base[0])
+		return (0);
+	while (parse && *parse)
 	{
-		result = result * 10 + (*str - '0');
-		str++;
+		if (base_index(*parse, base) < 0)
+			break;
+		result = result * base_len + base_index(*parse, base);
+		parse++;
 	}
-	if (neg % 2 == 1)
+	if (neg % 2)
 		result = result * -1;
-	return (ft_nbr_base(result, base));
+	return (result);
 }
 
-char *ft_rm_not_nbr(char *str, int *neg)
+char *ft_parse_str(char *str, int *neg, char *base)
 {
-	int whitespace;
-
-	whitespace = 1;
-	while (*str != '\0' && !(*str >= '0' && *str <= '9'))
+	int i;
+	i = -1;
+	while (++i, str[i])
 	{
-		if (*str != ' ' && *str != '+' && *str != '-')
-			return 0;
-		if (*str == ' ' && !whitespace)
-			return 0;
-		if (*str == '-')
-		{
-			whitespace = 0;
-			(*neg)++;
-		}
-		str++;
+		if (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13) || str[i] == '+')
+			continue;
+		else if (str[i] == '-')
+			*neg = *neg + 1;
+		else if (base_index(str[i], base) >= 0)
+			return (&str[i]);
+		else
+			return (0);
 	}
-	return (str);
+	return (0);
 }
+int ft_strlen(char *str)
+{
+	int i;
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+int ft_validbase(char *base)
+{
+	int i;
+	int j;
+	i = -1;
+	while (base[++i])
+	{
+		if (base[i] == '+' || base[i] == '-')
+			return (0);
+		j = i;
+		while (base[++j])
+		{
+			if (base[i] == base[j])
+				return (0);
+		}
+	}
+	return (1);
+}
+int base_index(char c, char *base)
+{
+	int i;
 
-int ft_nbr_base(int nbr, base);
+	i = -1;
+	while (base[++i])
+	{
+		if (base[i] == c)
+			return (i);
+	}
+	return (-1);
+}

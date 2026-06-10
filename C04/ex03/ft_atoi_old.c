@@ -9,42 +9,46 @@
 /*   Updated: 2026/06/08 13:54:13 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-char *ft_parse_str(char *str, int *neg);
 
-int ft_atoi(char *str)
+char	*ft_rm_not_nbr(char *str, int *neg);
+
+int	ft_atoi(char *str)
 {
-    long result;
-    int neg;
-    char *parse;
+	int	result;
+	int	neg;
 
-    result = 0;
-    neg = 0;
-    parse = ft_parse_str(str, &neg);
-    while (parse && *parse)
-    {
-        if (*parse < '0' || *parse > '9')
-            break;
-        result = result * 10 + (*parse - '0');
-        parse++;
-    }
-    if (neg % 2)
-        result = result * -1;
-    return (result);
+	result = 0;
+	neg = 0;
+	str = ft_rm_not_nbr(str, &neg);
+	if (!str)
+		return (result);
+	while (*str != '\0' && *str >= '0' && *str <= '9')
+	{
+		result = result * 10 + (*str - '0');
+		str++;
+	}
+	if (neg % 2 == 1)
+		result = result * -1;
+	return (result);
 }
-char *ft_parse_str(char *str, int *neg)
+
+char	*ft_rm_not_nbr(char *str, int *neg)
 {
-    int i;
-    i = -1;
-    while (++i, str[i])
-    {
-        if (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13) || str[i] == '+')
-            continue;
-        else if (str[i] == '-')
-            *neg = *neg + 1;
-        else if (str[i] >= '0' && str[i] <= '9')
-            return (&str[i]);
-        else
-            return (0);
-    }
-    return (0);
+	int	whitespace;
+
+	whitespace = 1;
+	while (*str != '\0' && !(*str >= '0' && *str <= '9'))
+	{
+		if (*str != ' ' && *str != '+' && *str != '-')
+			return (0);
+		if (*str == ' ' && !whitespace)
+			return (0);
+		if (*str == '-')
+		{
+			whitespace = 0;
+			(*neg)++;
+		}
+		str++;
+	}
+	return (str);
 }

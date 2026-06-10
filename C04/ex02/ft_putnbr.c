@@ -12,9 +12,23 @@
 
 #include <unistd.h>
 
-void	ft_putnbr(int nbr)
+void ft_putnbr_long(long nbr);
+
+void ft_putnbr(int nbr)
 {
-	if (nbr < 10)
-		write(1, )
-	ft_putnbr(nbr/10);
+	if (nbr == 0)
+		write(1, "0", 1);
+	else
+		ft_putnbr_long((long)nbr);
+}
+void ft_putnbr_long(long nbr)
+{
+	if (nbr < 0)
+	{
+		write(1, "-", 1);
+		nbr = -nbr;
+	}
+	if (nbr / 10 != 0)
+		ft_putnbr_long(nbr / 10);
+	write(1, &(char){nbr % 10 + '0'}, 1);
 }

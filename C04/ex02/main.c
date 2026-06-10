@@ -12,13 +12,14 @@
 
 #include <unistd.h>
 
-void	ft_putnbr(int nbr);
+void ft_putnbr(int nbr);
 
-int	main(void)
+int main(void)
 {
-	int	nbr;
+	int nbr;
 
-	nbr = -2147483648;
+	// nbr = -2147483648;
+	nbr = 0;
 	ft_putnbr(nbr);
 	return (0);
 }

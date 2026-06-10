@@ -12,88 +12,57 @@
 
 #include <unistd.h>
 
-int		ft_char_in_str(char c, char *str);
-char	*ft_append_cat(char *dest, char c);
-int		ft_get_base_len(char *base);
-void	ft_put_revstr(char *str);
-int		ft_isneg(int nb);
+void ft_putnbr_long_base(long nbr, char *base, int base_len);
+int ft_strlen(char *str);
+int ft_validbase(char *base);
 
-void	ft_putnbr_base(int nbr, char *base)
+void ft_putnbr_base(int nbr, char *base)
 {
-	int		base_len;
-	char	result[64];
-	int		sign;
-	int		i;
+    int base_len;
 
-	result[0] = '\0';
-	sign = ft_isneg(nbr);
-	base_len = ft_get_base_len(base);
-	if (base_len <= 1)
-		return ;
-	if (nbr == 0)
-		write(1, &base[0], 1);
-	while (nbr)
-	{
-		ft_append_cat(result, (base[sign * nbr % base_len]));
-		nbr = sign * (nbr / base_len);
-		sign = 1;
-	}
-	i = 0;
-	while (result[i] != '\0')
-		i++;
-	while (i--)
-		write(1, &result[i], 1);
+    base_len = ft_strlen(base);
+    if (!ft_validbase(base) || base_len < 2)
+        return;
+    else if (nbr == 0)
+        write(1, &base[0], 1);
+    else
+        ft_putnbr_long_base((long)nbr, base, base_len);
 }
 
-int	ft_isneg(int nb)
+void ft_putnbr_long_base(long nbr, char *base, int base_len)
 {
-	if (nb < 0)
-	{
-		write(1, "-", 1);
-		return (-1);
-	}
-	else
-		return (1);
+    if (nbr < 0)
+    {
+        write(1, "-", 1);
+        nbr = -nbr;
+    }
+    if (nbr / base_len != 0)
+        ft_putnbr_long_base(nbr / base_len, base, base_len);
+    write(1, &base[nbr % base_len], 1);
 }
-
-int	ft_get_base_len(char *base)
+int ft_strlen(char *str)
 {
-	int	len;
-
-	len = 0;
-	if (*base == '\0')
-		return (0);
-	while (*base != '\0')
-	{
-		if (*base == '+' || *base == '-')
-			return (0);
-		if (ft_char_in_str(*base, base + 1))
-			return (0);
-		len++;
-		base++;
-	}
-	return (len);
+    int i;
+    i = 0;
+    while (str[i])
+        i++;
+    return (i);
 }
-
-char	*ft_append_cat(char *dest, char c)
+int ft_validbase(char *base)
 {
-	int	i;
-
-	i = 0;
-	while (dest[i] != '\0')
-		i++;
-	dest[i] = c;
-	dest[i + 1] = '\0';
-	return (dest);
-}
-
-int	ft_char_in_str(char c, char *str)
-{
-	while (*str != '\0')
-	{
-		if (*str == c)
-			return (1);
-		str++;
-	}
-	return (0);
+    int i;
+    int j;
+    i = -1;
+    while (base[++i])
+    {
+        if (base[i] == '+' || base[i] == '-')
+            return (0);
+        j = i;
+        while (base[++j])
+        {
+            if (base[i] == base[j])
+                return (0);
+        }
+    }
+    return (1);
 }
