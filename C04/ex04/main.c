@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int ft_putnbr_base(int nbr, char *base);
+void ft_putnbr_base(int nbr, char *base);
 
 int main(void)
 {
