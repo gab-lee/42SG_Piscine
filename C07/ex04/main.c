@@ -10,14 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
+#include <stdlib.h>
 
 char *ft_convert_base(char *nbr, char *base_from, char *base_to);
 
 int main(void)
 {
-    printf("%s\n", ft_convert_base("ff", "0123456789abcdef", "01"));
-    printf("%s\n", ft_convert_base("0", "01", "0123456789"));
-    printf("%s\n", ft_convert_base("-ff", "0123456789abcdef", "0123456789"));
-    printf("%s\n", ft_convert_base("42", "0123456789", "0123456789abcdef"));
+    char *nbr = "ff";
+    char *base_from = "0123456789abcdef";
+    char *base_to = "01";
+    char *new_nbr;
+
+    new_nbr = ft_convert_base(nbr, base_from, base_to);
+    printf("nbr: %s", new_nbr);
+    free(new_nbr);
     return (0);
 }

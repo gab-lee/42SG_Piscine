@@ -18,44 +18,44 @@ void ft_strnbr_long_base(long nbr, char *base, int base_len, char *str);
 int base_index(char c, char *base);
 char *ft_parse_str(char *str, int *neg, char *base);
 int ft_str_size(int nbr, int base_len);
-char *ft_strnbr_base(int nbr, char *base);
+void ft_strnbr_base(int nbr, char *base, char **str);
 int ft_atoi_base(char *str, char *base);
 
 char *ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
-	return (ft_strnbr_base(ft_atoi_base(nbr, base_from), base_to));
-}
-
-char *ft_strnbr_base(int nbr, char *base)
-{
-	int base_len;
-	int str_size;
+	int n;
 	char *str;
 
-	base_len = ft_strlen(base);
-	if (!ft_validbase(base) || base_len < 2)
-		return (NULL);
-	str_size = ft_str_size(nbr, base_len);
+	n = ft_atoi_base(nbr, base_from);
 	if (nbr == 0)
 	{
 		str = malloc(2 * sizeof(char));
-		str[0] = base[0];
+		str[0] = base_to[0];
 		str[1] = '\0';
 		return (str);
 	}
-	else
+	ft_strnbr_base(n, base_to, &str);
+	return (str);
+}
+
+void ft_strnbr_base(int nbr, char *base, char **str)
+{
+	int base_len;
+	int str_size;
+
+	base_len = ft_strlen(base);
+	if (!ft_validbase(base) || base_len < 2)
+		str = NULL;
+	str_size = ft_str_size(nbr, base_len);
+	*str = malloc(str_size * sizeof(char));
+	(*str)[str_size - 1] = '\0';
+	if (nbr < 0)
 	{
-		str = malloc(str_size * sizeof(char));
-		if (nbr < 0)
-		{
-			str[0] = '-';
-			ft_strnbr_long_base((long)-nbr, base, base_len, str + str_size - 2);
-		}
-		else
-			ft_strnbr_long_base((long)nbr, base, base_len, str + str_size - 2);
-		str[str_size - 1] = '\0';
-		return (str);
+		(*str)[0] = '-';
+		ft_strnbr_long_base((long)-nbr, base, base_len, str + str_size - 2);
 	}
+	else
+		ft_strnbr_long_base((long)nbr, base, base_len, str + str_size - 2);
 }
 
 int ft_atoi_base(char *str, char *base)

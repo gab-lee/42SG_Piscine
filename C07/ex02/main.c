@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int ft_ultimate_range(int **range, int min, int max);
 
@@ -22,7 +23,7 @@ int	main(void)
 	int *array;
 	int n;
 
-	min = 80;
+	min = 12;
 	max = 32;
 	i = -1;
 	n = ft_ultimate_range(&array, min, max);
@@ -31,5 +32,6 @@ int	main(void)
 		printf("array[%d]:%d\n",i,array[i]);
 	}
 	printf("size: %d",n);
+	free(array);
 	return (0);
 }

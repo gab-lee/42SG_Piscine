@@ -23,7 +23,7 @@ int	*ft_range(int min, int max)
 		array = NULL;
 		return (array);
 	}
-	array = malloc((max - min + 1)* sizeof(int));
+	array = malloc((max - min)* sizeof(int));
 	ft_fill_array(array, min, max);
 	return (array);
 }
@@ -33,6 +33,6 @@ void	ft_fill_array(int *array, int min, int max)
 	int i;
 
 	i = -1;
-	while (++i, min + i <= max)
+	while (++i, min + i < max)
 		array[i] = min + i;
 }
