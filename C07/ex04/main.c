@@ -16,9 +16,9 @@ char *ft_convert_base(char *nbr, char *base_from, char *base_to);
 
 int main(void)
 {
-    char *nbr = "ff";
-    char *base_from = "0123456789abcdef";
-    char *base_to = "01";
+    char *nbr = "11100";
+    char *base_from = "01";
+    char *base_to = "0123456789";
     char *new_nbr;
 
     new_nbr = ft_convert_base(nbr, base_from, base_to);

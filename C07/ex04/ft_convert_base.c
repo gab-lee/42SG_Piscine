@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 int ft_strlen(char *str);
 int ft_validbase(char *base);
@@ -35,6 +34,7 @@ char *ft_convert_base(char *nbr, char *base_from, char *base_to)
 		str[1] = '\0';
 		return (str);
 	}
+	str = malloc(1 * sizeof(char));
 	ft_strnbr_base(n, base_to, &str);
 	return (str);
 }
@@ -51,7 +51,7 @@ void ft_strnbr_base(int nbr, char *base, char **str)
 		return ;
 	}
 	str_size = ft_str_size(nbr, base_len);
-	printf("str size: %d\n", str_size);
+	free(*str);
 	*str = malloc(str_size * sizeof(char));
 	(*str)[str_size - 1] = '\0';
 	if (nbr < 0)
@@ -93,7 +93,7 @@ int ft_str_size(int nbr, int base_len)
 {
 	int i;
 
-	i = 1;
+	i = 0;
 	if (nbr < 0)
 		i++;
 	while (++i, nbr)

@@ -12,27 +12,9 @@
 
 char **ft_split(char *str, char *charset)
 {
-	int i;
-	int n_substrings;
-	char **strs;
-
-	i = 0;
-	n_substrings = 0;
-	while (charset[i] != '\0')
-		n_substrings = n_substring + ft_fchar(str, charset[i]);
-	strs = malloc(n_substrings * sizeof(char *));
-	//should consider recurssioin.
-
-	strs[i] = NULL;
-
+	int	i;
+	char **array;
+	*array[0] = '\0'
 }
 
-int	ft_strlen(char *str)
-{
-	//returns the length of str
-}
 
-int ft_fchar(char *str, char c)
-{
-	//returns the number of time c happens in str
-}
