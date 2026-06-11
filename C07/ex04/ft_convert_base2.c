@@ -31,7 +31,7 @@ int ft_validbase(char *base)
     {
         if (base[i] == '+' || base[i] == '-')
             return (0);
-        else if (base[i] = ' ' || base[i] >= 9 && base[i] <= 13)
+        else if (base[i] == ' ' || base[i] >= 9 && base[i] <= 13)
             return (0);
         j = i;
         while (base[++j])
