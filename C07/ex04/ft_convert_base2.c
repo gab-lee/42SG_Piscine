@@ -12,6 +12,7 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
 int ft_strlen(char *str)
 {
@@ -47,6 +48,7 @@ void ft_strnbr_long_base(long nbr, char *base, int base_len, char *str)
     if (nbr / base_len != 0)
         ft_strnbr_long_base(nbr / base_len, base, base_len, str - 1);
     *str = base[nbr % base_len];
+    printf("%c",base[nbr % base_len]);
     return;
 }
 int base_index(char c, char *base)

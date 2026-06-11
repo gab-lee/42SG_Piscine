@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
 int ft_strlen(char *str);
 int ft_validbase(char *base);
@@ -27,7 +28,7 @@ char *ft_convert_base(char *nbr, char *base_from, char *base_to)
 	char *str;
 
 	n = ft_atoi_base(nbr, base_from);
-	if (nbr == 0)
+	if (n == 0)
 	{
 		str = malloc(2 * sizeof(char));
 		str[0] = base_to[0];
@@ -45,17 +46,21 @@ void ft_strnbr_base(int nbr, char *base, char **str)
 
 	base_len = ft_strlen(base);
 	if (!ft_validbase(base) || base_len < 2)
-		str = NULL;
+	{
+		*str = NULL;
+		return ;
+	}
 	str_size = ft_str_size(nbr, base_len);
+	printf("str size: %d\n", str_size);
 	*str = malloc(str_size * sizeof(char));
 	(*str)[str_size - 1] = '\0';
 	if (nbr < 0)
 	{
 		(*str)[0] = '-';
-		ft_strnbr_long_base((long)-nbr, base, base_len, str + str_size - 2);
+		ft_strnbr_long_base(-(long)nbr, base, base_len, *str + str_size -2);
 	}
 	else
-		ft_strnbr_long_base((long)nbr, base, base_len, str + str_size - 2);
+		ft_strnbr_long_base((long)nbr, base, base_len, *str + str_size -2);
 }
 
 int ft_atoi_base(char *str, char *base)
@@ -88,10 +93,10 @@ int ft_str_size(int nbr, int base_len)
 {
 	int i;
 
-	i = 0;
+	i = 1;
 	if (nbr < 0)
 		i++;
 	while (++i, nbr)
 		nbr = nbr / base_len;
-	return (i + 1);
+	return (i);
 }
