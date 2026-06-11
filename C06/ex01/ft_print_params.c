@@ -6,15 +6,15 @@
 /*   By: gabrlee <gabrlee@student.42singapore.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 14:53:47 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/08 15:26:49 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/11 09:52:55 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_put_str(char *str);
+void	ft_put_str(char *str);
 
-int	main(int argc, char ** argv)
+int	main(int argc, char **argv)
 {
 	int	i;
 
@@ -29,9 +29,9 @@ int	main(int argc, char ** argv)
 	return (0);
 }
 
-void ft_put_str(char *str)
+void	ft_put_str(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -39,5 +39,5 @@ void ft_put_str(char *str)
 		write(1, &str[i], 1);
 		i++;
 	}
-	write(1, "\n", 1 );
+	write(1, "\n", 1);
 }

@@ -10,9 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 int ft_ten_queens_puzzle(void);
 
 int	main(void)
 {
-	return (ft_ten_queens_puzzle());
+	printf("Solutions: %d",ft_ten_queens_puzzle());
 }

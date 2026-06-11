@@ -1,8 +1,8 @@
 ex00/*
-!ex00/ft_print_programme_name.c
+!ex00/ft_print_program_name.c
 ex01/*
 !ex01/ft_print_params.c
 ex02/*
-!ex02/ft_print_rev_params.c
+!ex02/ft_rev_params.c
 ex03/*
-!ex03/ft_print_sort_params.c
+!ex03/ft_sort_params.c

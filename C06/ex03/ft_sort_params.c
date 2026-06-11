@@ -6,18 +6,18 @@
 /*   By: gabrlee <gabrlee@student.42singapore.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 15:28:06 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/08 16:10:13 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/11 09:58:35 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void    ft_put_str(char *str);
+void	ft_put_str(char *str);
 void	ft_sort_params(char **params, int size);
 void	ft_swap(char **str1, char **str2);
 int		ft_strcmp(char *s1, char *s2);
 
-int	main(int argc, char ** argv)
+int	main(int argc, char **argv)
 {
 	int	i;
 
@@ -25,7 +25,7 @@ int	main(int argc, char ** argv)
 	if (argc == 1)
 		return (0);
 	if (argc > 2)
-    	ft_sort_params(argv + 1, argc - 1);
+		ft_sort_params(argv + 1, argc - 1);
 	while (i < argc)
 	{
 		ft_put_str(argv[i]);
@@ -34,9 +34,9 @@ int	main(int argc, char ** argv)
 	return (0);
 }
 
-void ft_put_str(char *str)
+void	ft_put_str(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -44,32 +44,32 @@ void ft_put_str(char *str)
 		write(1, &str[i], 1);
 		i++;
 	}
-	write(1, "\n", 1 );
+	write(1, "\n", 1);
 }
 
-void ft_sort_params(char **params, int size)
+void	ft_sort_params(char **params, int size)
 {
 	int	i;
-	int max;
+	int	max;
 
 	while (size)
 	{
 		i = 0;
 		max = 0;
-		while(i < size)
+		while (i < size)
 		{
 			if (ft_strcmp(params[i], params[max]) > 0)
 				max = i;
 			i++;
 		}
-		ft_swap(&params[max],&params[size-1]);
+		ft_swap(&params[max], &params[size - 1]);
 		size--;
 	}
 }
 
-void ft_swap(char **str1, char **str2)
+void	ft_swap(char **str1, char **str2)
 {
-	char *temp;
+	char	*temp;
 
 	temp = *str1;
 	*str1 = *str2;
