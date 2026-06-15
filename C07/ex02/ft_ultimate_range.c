@@ -23,7 +23,7 @@ int	ft_ultimate_range(int **range, int min, int max)
 		return (-1);
 	else if (min >= max)
 	{
-		*range = malloc(1);
+		*range = malloc(1 * sizeof(int*);
 		range[0] = NULL;
 		return (0);
 	}
