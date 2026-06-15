@@ -19,11 +19,13 @@ int	ft_ultimate_range(int **range, int min, int max)
 	int	size;
 
 	size = 0;
-	if (min >= max)
+	if (!min || !max)
+		return (-1);
+	else if (min >= max)
 	{
 		*range = malloc(1);
 		range[0] = NULL;
-		return (-1);
+		return (0);
 	}
 	*range = malloc((max - min + 2) * sizeof(int));
 	if(!range)
