@@ -18,15 +18,19 @@ void ft_strnbr_long_base(long nbr, char *base, int base_len, char *str);
 int base_index(char c, char *base);
 char *ft_parse_str(char *str, int *neg, char *base);
 int ft_str_size(int nbr, int base_len);
-void ft_strnbr_base(int nbr, char *base, char **str);
-int ft_atoi_base(char *str, char *base);
+void ft_strnbr_base(int nbr, char *base, char **str, int *error);
+int ft_atoi_base(char *str, char *base, int *error);
 
 char *ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
 	int n;
+	int error;
 	char *str;
 
-	n = ft_atoi_base(nbr, base_from);
+	error = 0;
+	n = ft_atoi_base(nbr, base_from, &error);
+	if (error)
+		return NULL;
 	if (n == 0)
 	{
 		str = malloc(2 * sizeof(char));
@@ -35,11 +39,13 @@ char *ft_convert_base(char *nbr, char *base_from, char *base_to)
 		return (str);
 	}
 	str = malloc(1 * sizeof(char));
-	ft_strnbr_base(n, base_to, &str);
+	ft_strnbr_base(n, base_to, &str, &error);
+	if (error)
+		return NULL;
 	return (str);
 }
 
-void ft_strnbr_base(int nbr, char *base, char **str)
+void ft_strnbr_base(int nbr, char *base, char **str, int *error)
 {
 	int base_len;
 	int str_size;
@@ -47,6 +53,7 @@ void ft_strnbr_base(int nbr, char *base, char **str)
 	base_len = ft_strlen(base);
 	if (!ft_validbase(base) || base_len < 2)
 	{
+		*error = 1;
 		*str = NULL;
 		return ;
 	}
@@ -63,7 +70,7 @@ void ft_strnbr_base(int nbr, char *base, char **str)
 		ft_strnbr_long_base((long)nbr, base, base_len, *str + str_size -2);
 }
 
-int ft_atoi_base(char *str, char *base)
+int ft_atoi_base(char *str, char *base, int *error)
 {
 	long result;
 	int neg;
@@ -71,11 +78,14 @@ int ft_atoi_base(char *str, char *base)
 	char *parse;
 
 	result = 0;
-	neg = 0;
+	neg = 1;
 	parse = ft_parse_str(str, &neg, base);
 	base_len = ft_strlen(base);
 	if (!ft_validbase(base) || base_len < 2)
+	{
+		*error = 1;
 		return (0);
+	}
 	else if (ft_strlen(parse) == 1 && parse[0] == base[0])
 		return (0);
 	while (parse && *parse)
@@ -85,9 +95,7 @@ int ft_atoi_base(char *str, char *base)
 		result = result * base_len + base_index(*parse, base);
 		parse++;
 	}
-	if (neg % 2)
-		result = result * -1;
-	return (result);
+	return (neg * result);
 }
 int ft_str_size(int nbr, int base_len)
 {

@@ -32,7 +32,7 @@ int ft_validbase(char *base)
     {
         if (base[i] == '+' || base[i] == '-')
             return (0);
-        else if (base[i] == ' ' || base[i] >= 9 && base[i] <= 13)
+        else if (base[i] == ' ' || (base[i] >= 9 && base[i] <= 13))
             return (0);
         j = i;
         while (base[++j])
@@ -71,7 +71,7 @@ char *ft_parse_str(char *str, int *neg, char *base)
         if (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13) || str[i] == '+')
             continue;
         else if (str[i] == '-')
-            *neg = *neg + 1;
+            *neg = *neg * -1;
         else if (base_index(str[i], base) >= 0)
             return (&str[i]);
         else
