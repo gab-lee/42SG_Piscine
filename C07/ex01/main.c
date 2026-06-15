@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
-
+#include <limits.h>
 int *ft_range(int min, int max);
 
 int	main(void)
@@ -21,8 +21,8 @@ int	main(void)
 	int i;
 	int *array;
 
-	min = 8;
-	max = 32;
+	min = INT_MIN;
+	max = INT_MIN + 2147483648;
 	i = -1;
 	array = ft_range(min, max);
 	while (i++, min + i <= max)

@@ -10,7 +10,7 @@ int main(int argc, char **argv)
     int i = -1;
     int str_len = 0;
     int words = 0;
-    char *charset = "abc";
+    char *charset = " ";
 
     if (argc != 2)
         return (0);
@@ -22,6 +22,7 @@ int main(int argc, char **argv)
     while (++i, array[i])
         printf("str[%d]:%s\n", i, array[i]);
     free(array);
+    array = NULL;
     //ft_count_words(str, &str_len, &words);
     //printf("No. words:%d\n", words);
     return (0);

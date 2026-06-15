@@ -16,7 +16,7 @@ void	ft_fill_array(int *array, int min, int max, int *size);
 
 int	ft_ultimate_range(int **range, int min, int max)
 {
-	int size;
+	int	size;
 
 	size = 0;
 	if (min >= max)
@@ -25,18 +25,20 @@ int	ft_ultimate_range(int **range, int min, int max)
 		range[0] = NULL;
 		return (-1);
 	}
-	*range = malloc((max - min - 1) * sizeof(int));
+	*range = malloc((max - min + 2) * sizeof(int));
+	if(!range)
+		return (-1);
+	range[max - min + 2] = NULL;
 	ft_fill_array(*range, min, max, &size);
 	return (size);
 }
 
-
 void	ft_fill_array(int *array, int min, int max, int *size)
 {
-	int i;
+	int	i;
 
 	i = -1;
-	while (++i, min + i < max)
+	while (++i, (min + i) < max)
 		array[i] = min + i;
 	*size = i;
 }

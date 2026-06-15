@@ -12,14 +12,14 @@
 
 #include <stdlib.h>
 
-int	ft_strlen(char *str);
+int		ft_strlen(char *str);
 char	*ft_strcat(char *dest, char *src);
 
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	char	*res;
-	int i;
-    int len;
+	int		i;
+	int		len;
 
 	len = 0;
 	i = -1;
@@ -33,15 +33,17 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 		len = len + ft_strlen(strs[i]);
 	len = len + (ft_strlen(sep) * size - 1);
 	res = malloc((len + 1) * sizeof(char));
+	if (!res)
+		return (NULL) 
 	res[0] = '\0';
 	i = -1;
 	while (++i < size)
 	{
-		ft_strcat(res,strs[i]);
-		if (i != size -1)
-			ft_strcat(res,sep);
+		ft_strcat(res, strs[i]);
+		if (i != size - 1)
+			ft_strcat(res, sep);
 	}
-	return res;
+	return (res);
 }
 
 int	ft_strlen(char *str)
@@ -56,8 +58,8 @@ int	ft_strlen(char *str)
 
 char	*ft_strcat(char *dest, char *src)
 {
-	int i;
-    int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	if (!*src)
@@ -65,7 +67,7 @@ char	*ft_strcat(char *dest, char *src)
 	while (dest[i] != '\0')
 		i++;
 	i--;
-    j = -1;
+	j = -1;
 	while (++i, ++j, src[j] != '\0')
 		dest[i] = src[j];
 	dest[i] = '\0';

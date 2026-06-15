@@ -17,20 +17,20 @@ void	ft_fill_array(int *array, int min, int max);
 int	*ft_range(int min, int max)
 {
 	int	*array;
-	
+
 	if (min >= max)
 	{
 		array = NULL;
 		return (array);
 	}
-	array = malloc((max - min)* sizeof(int));
+	array = malloc((long)(max - min) * sizeof(int));
 	ft_fill_array(array, min, max);
 	return (array);
 }
 
 void	ft_fill_array(int *array, int min, int max)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (++i, min + i < max)

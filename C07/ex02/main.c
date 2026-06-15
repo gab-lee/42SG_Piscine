@@ -23,11 +23,11 @@ int	main(void)
 	int *array;
 	int n;
 
-	min = 12;
-	max = 32;
+	min = -100;
+	max = -10;
 	i = -1;
 	n = ft_ultimate_range(&array, min, max);
-	while (i++, min + i + 1 < max)
+	while (i++, min + i < max)
 	{
 		printf("array[%d]:%d\n",i,array[i]);
 	}

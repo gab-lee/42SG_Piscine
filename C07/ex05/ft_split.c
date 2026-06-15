@@ -6,24 +6,23 @@
 /*   By: gabrlee <gabrlee@student.42singapore.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 12:44:10 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/09 13:11:56 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/15 12:41:02 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void ft_count_words(char *str, int *str_len, int *words, char *charset);
-void ft_fill_array(char **array, char *str, char *charset);
-int ft_in_charset(char c, char *charset);
+void	ft_count_words(char *str, int *str_len, int *words, char *charset);
+void	ft_fill_array(char **array, char *str, char *charset);
+int		ft_in_charset(char c, char *charset);
+char	**ft_allocate_array(int words, int str_len);
 
-char **ft_split(char *str, char *charset)
+char	**ft_split(char *str, char *charset)
 {
-	char **array;
-	int i;
-	int words;
-	int str_len;
+	char	**array;
+	int		words;
+	int		str_len;
 
-	i = -1;
 	str_len = 0;
 	words = 0;
 	if (!str || !str[0])
@@ -31,6 +30,8 @@ char **ft_split(char *str, char *charset)
 	if (!charset)
 	{
 		array = malloc((2) * sizeof(char *));
+		if (!array)
+			return (NULL);
 		array[0] = str;
 		array[1] = NULL;
 		return (array);
@@ -38,18 +39,35 @@ char **ft_split(char *str, char *charset)
 	ft_count_words(str, &str_len, &words, charset);
 	if (!words)
 		return (NULL);
-	array = malloc((words + 1) * sizeof(char *));
-	while (++i, i < words + 1)
-		array[i] = malloc((str_len + 1) * sizeof(char));
+	array = ft_allocate_array(words, str_len);
 	ft_fill_array(array, str, charset);
 	return (array);
 }
 
-void ft_count_words(char *str, int *str_len, int *words, char *charset)
+char	**ft_allocate_array(int words, int str_len)
 {
-	int i;
-	int space;
-	int temp;
+	char	**array;
+	int		i;
+
+	i = -1;
+	array = malloc((words + 1) * sizeof(char *));
+	if (!array)
+		return (NULL);
+	while (++i, i < words + 1)
+	{
+		array[i] = malloc((str_len + 1) * sizeof(char));
+		if (!array[i])
+			return (NULL);
+		array[i][0] = '\0';
+	}
+	return (array);
+}
+
+void	ft_count_words(char *str, int *str_len, int *words, char *charset)
+{
+	int	i;
+	int	space;
+	int	temp;
 
 	i = -1;
 	space = 1;
@@ -58,10 +76,10 @@ void ft_count_words(char *str, int *str_len, int *words, char *charset)
 	{
 		if (!str[i] || ft_in_charset(str[i], charset))
 		{
-			if (i - temp > *str_len)
+			if (!space && i - temp > *str_len)
 				*str_len = i - temp;
 			if (!str[i])
-				break;
+				break ;
 			space = 1;
 		}
 		else if (space)
@@ -72,11 +90,12 @@ void ft_count_words(char *str, int *str_len, int *words, char *charset)
 		}
 	}
 }
-void ft_fill_array(char **array, char *str, char *charset)
+
+void	ft_fill_array(char **array, char *str, char *charset)
 {
-	int i;
-	int j;
-	int k;
+	int	i;
+	int	j;
+	int	k;
 
 	i = -1;
 	j = -1;
@@ -89,7 +108,7 @@ void ft_fill_array(char **array, char *str, char *charset)
 				array[j][k] = '\0';
 			k = 0;
 			if (!str[i])
-				break;
+				break ;
 		}
 		else
 		{
@@ -100,9 +119,10 @@ void ft_fill_array(char **array, char *str, char *charset)
 	}
 	array[j + 1] = NULL;
 }
-int ft_in_charset(char c, char *charset)
+
+int	ft_in_charset(char c, char *charset)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (++i, charset[i])
