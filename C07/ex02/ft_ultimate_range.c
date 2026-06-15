@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-void	ft_fill_array(int *array, int min, int max, int *size);
+void	ft_fill_array(int **array, int min, int max, int *size);
 
 int	ft_ultimate_range(int **range, int min, int max)
 {
@@ -29,16 +29,16 @@ int	ft_ultimate_range(int **range, int min, int max)
 	if(!range)
 		return (-1);
 	range[max - min + 2] = NULL;
-	ft_fill_array(*range, min, max, &size);
+	ft_fill_array(**range, min, max, &size);
 	return (size);
 }
 
-void	ft_fill_array(int *array, int min, int max, int *size)
+void	ft_fill_array(int **array, int min, int max, int *size)
 {
 	int	i;
 
 	i = -1;
 	while (++i, (min + i) < max)
-		array[i] = min + i;
+		(*array)[i] = min + i;
 	*size = i;
 }

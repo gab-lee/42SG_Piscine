@@ -32,4 +32,4 @@ fclean: clean
 	@echo "Removing libft.a"
 	rm -f libft.a
 
-re: clean all 
+re: fclean all 
