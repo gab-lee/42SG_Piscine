@@ -10,7 +10,7 @@ int main(int argc, char **argv)
     int i = -1;
     int str_len = 0;
     int words = 0;
-    char *charset = " ";
+    char *charset = "abc";
 
     if (argc != 2)
         return (0);
