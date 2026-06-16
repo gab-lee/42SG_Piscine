@@ -1,5 +1,5 @@
 srcs/ft_putchar.o : srcs/ft_putchar.c includes/ft.h
-	@echo "Compiling ft_putchar.o"
+
 	gcc -Wall -Wextra -Werror -Iincludes -c srcs/ft_putchar.c -o srcs/ft_putchar.o
 	
 srcs/ft_swap.o : srcs/ft_swap.c includes/ft.h

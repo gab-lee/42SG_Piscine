@@ -20,6 +20,7 @@ char	*ft_parse_str(char *str, int *neg, char *base);
 int		ft_str_size(int nbr, int base_len);
 void	ft_strnbr_base(int nbr, char *base, char **str, int *error);
 int		ft_atoi_base(char *str, char *base, int *error);
+char	*ft_raise_error(void);
 
 char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
@@ -54,6 +55,7 @@ void	ft_strnbr_base(int nbr, char *base, char **str, int *error)
 	if (!ft_validbase(base) || base_len < 2)
 	{
 		*error = 1;
+		free(*str);
 		*str = NULL;
 		return ;
 	}
@@ -81,7 +83,7 @@ int	ft_atoi_base(char *str, char *base, int *error)
 	neg = 1;
 	parse = ft_parse_str(str, &neg, base);
 	base_len = ft_strlen(base);
-	if (!ft_validbase(base) || base_len < 2)
+	if (!ft_validbase(base) || base_len < 2 || ft_strlen(parse) == -1)
 	{
 		*error = 1;
 		return (0);

@@ -15,7 +15,7 @@
 void	ft_count_words(char *str, int *str_len, int *words, char *charset);
 void	ft_fill_array(char **array, char *str, char *charset);
 int		ft_in_charset(char c, char *charset);
-char	**ft_allocate_array(int words, int str_len);
+char	**ft_allocate_array(int words, int str_len, int error);
 
 char	**ft_split(char *str, char *charset)
 {
@@ -26,7 +26,10 @@ char	**ft_split(char *str, char *charset)
 	str_len = 0;
 	words = 0;
 	if (!str || !str[0])
-		return (NULL);
+	{
+		array = ft_allocate_array(1, 1, 1);
+		return (array);
+	}
 	if (!charset)
 	{
 		array = malloc((2) * sizeof(char *));
@@ -37,19 +40,24 @@ char	**ft_split(char *str, char *charset)
 		return (array);
 	}
 	ft_count_words(str, &str_len, &words, charset);
-	if (!words)
-		return (NULL);
-	array = ft_allocate_array(words, str_len);
-	ft_fill_array(array, str, charset);
+	array = ft_allocate_array(words, str_len, 0);
+	if (array)
+		ft_fill_array(array, str, charset);
 	return (array);
 }
 
-char	**ft_allocate_array(int words, int str_len)
+char	**ft_allocate_array(int words, int str_len, int error)
 {
 	char	**array;
 	int		i;
 
 	i = -1;
+	if (!words || error)
+	{
+		array = malloc((1) * sizeof(char *));
+		array[0] = NULL;
+		return (array);
+	}
 	array = malloc((words + 1) * sizeof(char *));
 	if (!array)
 		return (NULL);

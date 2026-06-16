@@ -6,7 +6,7 @@
 /*   By: gabrlee <gabrlee@student.42singapore.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 10:57:54 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/09 11:13:07 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/16 10:11:33 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int		ft_strlen(char *str);
 char	*ft_strcat(char *dest, char *src);
+char	*ft_raise_error(void);
 
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
@@ -24,17 +25,15 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	len = 0;
 	i = -1;
 	if (size <= 0)
-	{
-		res = malloc(1);
-		res[0] = '\0';
-		return (res);
-	}
+		ft_raise_error();
 	while (++i < size)
 		len = len + ft_strlen(strs[i]);
 	len = len + (ft_strlen(sep) * size - 1);
+	if (len <= 0)
+		ft_raise_error();
 	res = malloc((len + 1) * sizeof(char));
 	if (!res)
-		return (NULL) 
+		ft_raise_error();
 	res[0] = '\0';
 	i = -1;
 	while (++i < size)
@@ -72,4 +71,13 @@ char	*ft_strcat(char *dest, char *src)
 		dest[i] = src[j];
 	dest[i] = '\0';
 	return (dest);
+}
+
+char	*ft_raise_error(void)
+{
+	char	*res;
+
+	res = malloc(1 * sizeof(char));
+	res[0] = '\0';
+	return (res);
 }

@@ -1,14 +1,26 @@
-char *ft_parse_str(char *str, int *neg, char *base);
-int ft_strlen(char *str);
-int ft_validbase(char *base);
-int base_index(char c, char *base);
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gabrlee <gabrlee@student.42singapore.      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/16 15:06:24 by gabrlee           #+#    #+#             */
+/*   Updated: 2026/06/16 15:08:15 by gabrlee          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_atoi_base(char *str, char *base)
+char	*ft_parse_str(char *str, int *neg, char *base);
+int		ft_strlen(char *str);
+int		ft_validbase(char *base);
+int		base_index(char c, char *base);
+
+int	ft_atoi_base(char *str, char *base)
 {
-	long result;
-	int neg;
-	int base_len;
-	char *parse;
+	long	result;
+	int		neg;
+	int		base_len;
+	char	*parse;
 
 	result = 0;
 	neg = 0;
@@ -21,7 +33,7 @@ int ft_atoi_base(char *str, char *base)
 	while (parse && *parse)
 	{
 		if (base_index(*parse, base) < 0)
-			break;
+			break ;
 		result = result * base_len + base_index(*parse, base);
 		parse++;
 	}
@@ -30,14 +42,15 @@ int ft_atoi_base(char *str, char *base)
 	return (result);
 }
 
-char *ft_parse_str(char *str, int *neg, char *base)
+char	*ft_parse_str(char *str, int *neg, char *base)
 {
-	int i;
+	int	i;
+
 	i = -1;
 	while (++i, str[i])
 	{
 		if (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13) || str[i] == '+')
-			continue;
+			continue ;
 		else if (str[i] == '-')
 			*neg = *neg + 1;
 		else if (base_index(str[i], base) >= 0)
@@ -47,18 +60,22 @@ char *ft_parse_str(char *str, int *neg, char *base)
 	}
 	return (0);
 }
-int ft_strlen(char *str)
+
+int	ft_strlen(char *str)
 {
-	int i;
+	int	i;
+
 	i = 0;
 	while (str[i])
 		i++;
 	return (i);
 }
-int ft_validbase(char *base)
+
+int	ft_validbase(char *base)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
+
 	i = -1;
 	while (base[++i])
 	{
@@ -73,9 +90,10 @@ int ft_validbase(char *base)
 	}
 	return (1);
 }
-int base_index(char c, char *base)
+
+int	base_index(char c, char *base)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (base[++i])

@@ -17,7 +17,7 @@ int main(void)
 {
     char *str;
     int size;
-    char *arr[] = {"hello", "world", "foo"};
+    char *arr[] = {"", "", ""};
     char *sep;
 
     size = 3;
