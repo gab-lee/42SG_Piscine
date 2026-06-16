@@ -12,35 +12,25 @@
 
 #include <stdlib.h>
 
-void	ft_fill_array(int **array, int min, int max, int *size);
-
-int	ft_ultimate_range(int **range, int min, int max)
+int ft_ultimate_range(int **range, int min, int max)
 {
-	int	size;
-
-	size = 0;
+	int *tab;
+	int i;
+		
 	if (!min || !max)
 		return (-1);
-	else if (min >= max)
+	if (min >= max)
 	{
-		*range = malloc(1 * sizeof(int*);
-		range[0] = NULL;
-		return (0);
-	}
-	*range = malloc((max - min + 2) * sizeof(int));
-	if(!range)
+			*range = NULL;
+			return (0);
+		}
+		tab = (int*)malloc(sizeof(int) * (max - min + 1));
+	if (!tab)
 		return (-1);
-	range[max - min + 2] = NULL;
-	ft_fill_array(**range, min, max, &size);
-	return (size);
-}
-
-void	ft_fill_array(int **array, int min, int max, int *size)
-{
-	int	i;
-
-	i = -1;
-	while (++i, (min + i) < max)
-		(*array)[i] = min + i;
-	*size = i;
+		i=-1;
+		while (++i, i < (max - min)
+			tab[i] = min + i;
+		tab[i] = NULL;
+		*range = tab; 
+		return (i - 1);
 }
