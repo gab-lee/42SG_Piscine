@@ -6,12 +6,12 @@
 /*   By: gabrlee <gabrlee@student.42singapore.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 16:59:04 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/06/15 16:59:10 by gabrlee          ###   ########.fr       */
+/*   Updated: 2026/06/16 11:25:55 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_ABS_H
 # define FT_ABS_H
 
-# define ABS(Value) ((long)(Value) < 0 ? (long)(-(Value)) : (long)(Value))
+# define ABS(Value) ((Value) < 0 ? (-(Value)) : (Value))
 #endif
