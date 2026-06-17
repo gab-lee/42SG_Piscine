@@ -26,7 +26,7 @@ int	ft_ultimate_range(int **range, int min, int max)
 		return (-1);
 	}
 	*range = malloc((max - min + 2) * sizeof(int));
-	if(!range)
+	if (!range)
 		return (-1);
 	range[max - min + 2] = NULL;
 	ft_fill_array(*range, min, max, &size);

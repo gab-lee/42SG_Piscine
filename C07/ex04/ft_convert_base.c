@@ -20,7 +20,6 @@ char	*ft_parse_str(char *str, int *neg, char *base);
 int		ft_str_size(int nbr, int base_len);
 void	ft_strnbr_base(int nbr, char *base, char **str, int *error);
 int		ft_atoi_base(char *str, char *base, int *error);
-char	*ft_raise_error(void);
 
 char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
@@ -34,12 +33,14 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 		return (NULL);
 	if (n == 0)
 	{
+		if (!ft_validbase(base_to) || ft_strlen(base_to) < 2)
+			return (NULL);
 		str = malloc(2 * sizeof(char));
 		str[0] = base_to[0];
 		str[1] = '\0';
 		return (str);
 	}
-	str = malloc(1 * sizeof(char));
+	str = NULL;
 	ft_strnbr_base(n, base_to, &str, &error);
 	if (error)
 		return (NULL);
@@ -84,12 +85,7 @@ int	ft_atoi_base(char *str, char *base, int *error)
 	parse = ft_parse_str(str, &neg, base);
 	base_len = ft_strlen(base);
 	if (!ft_validbase(base) || base_len < 2 || ft_strlen(parse) == -1)
-	{
 		*error = 1;
-		return (0);
-	}
-	else if (ft_strlen(parse) == 1 && parse[0] == base[0])
-		return (0);
 	while (parse && *parse)
 	{
 		if (base_index(*parse, base) < 0)
@@ -105,7 +101,7 @@ int	ft_str_size(int nbr, int base_len)
 	int	i;
 
 	i = 0;
-	if (nbr < 0)
+	if (nbr <= 0)
 		i++;
 	while (++i, nbr)
 		nbr = nbr / base_len;
