@@ -1,0 +1,5 @@
+*.o
+bsq
+bsq_asan
+a.out
+*.txt

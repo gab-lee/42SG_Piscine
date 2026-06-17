@@ -1,3 +1,6 @@
+CC	= cc
+CFLAGS = -Wall -Werror -Werror
+
 srcs/ft_putchar.o : srcs/ft_putchar.c includes/ft.h
 
 	gcc -Wall -Wextra -Werror -Iincludes -c srcs/ft_putchar.c -o srcs/ft_putchar.o
