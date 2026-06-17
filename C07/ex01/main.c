@@ -21,11 +21,11 @@ int	main(void)
 	int i;
 	int *array;
 
-	min = INT_MIN;
-	max = INT_MIN + 2147483648;
+	min = -100;
+	max = 10;
 	i = -1;
 	array = ft_range(min, max);
-	while (i++, min + i <= max)
+	while (i++, min + i < max)
 	{
 		printf("array[%d]:%d\n",i,array[i]);
 	}

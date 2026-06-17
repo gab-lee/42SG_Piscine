@@ -17,11 +17,11 @@ int main(void)
 {
     char *str;
     int size;
-    char *arr[] = {"", "", ""};
+    char *arr[] = {"hello", "i", "am", "Gab"};
     char *sep;
 
-    size = 3;
-    sep = ", ";
+    size = 4;
+    sep = "-";
     str = ft_strjoin(size, arr, sep);
     printf("str: %s\n", str);
 }
