@@ -36,6 +36,7 @@ int	red_rws(int fd, t_minfo *info, int *pre_ia, int *cur_ia)
 {
 	int		row;
 	int		*tmp;
+	char	c;
 
 	row = 0;
 	while (row < info->rows)
@@ -48,5 +49,7 @@ int	red_rws(int fd, t_minfo *info, int *pre_ia, int *cur_ia)
 		cur_ia = tmp;
 		row++;
 	}
+	if (read(fd, &c, 1) > 0)
+		return (-1);
 	return (1);
 }

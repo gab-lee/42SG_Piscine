@@ -17,6 +17,8 @@ int	solve_map(char *map, t_minfo *info)
 	int	fd;
 
 	info->max_size = 0;
+	info->max_row = -1;
+	info->max_col = -1;
 	fd = open(map, O_RDONLY);
 	if (fd < 0)
 		return (-1);
@@ -27,8 +29,6 @@ int	solve_map(char *map, t_minfo *info)
 	}
 	close(fd);
 	if (red_map(map, info) < 0)
-		return (-1);
-	if (info->max_size == 0)
 		return (-1);
 	if (ft_print_map(map, info) < 0)
 		return (-1);

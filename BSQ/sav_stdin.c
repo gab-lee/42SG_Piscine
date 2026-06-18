@@ -14,7 +14,7 @@
 
 void	throw_error(void)
 {
-	write(2, "map error\n", 10);
+	write(1, "map error\n", 10);
 	exit(1);
 }
 
