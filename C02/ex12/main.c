@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrlee <gabrlee@student.42singapore.sg>   +#+  +:+       +#+        */
+/*   By: gabrlee <gabrlee@student.42singapore.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/30 15:46:56 by gabrlee           #+#    #+#             */
-/*   Updated: 2026/05/30 15:47:54 by gabrlee          ###   ########.fr       */
+/*   Created: 2026/06/18 11:19:18 by gabrlee           #+#    #+#             */
+/*   Updated: 2026/06/18 11:28:46 by gabrlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(int *a, int *b)
-{
-	int	c;
+void	*ft_print_memory(void *addr, unsigned int size);
 
-	c = *a;
-	*a = *b;
-	*b = c;
+int	main(void)
+{
+	ft_print_memory("hello my name is gab", 1);
+	return (0);
 }

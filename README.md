@@ -13,8 +13,8 @@
 | C04 | 50% |
 | C05 | 100% |
 | C06 | 100% |
-| C07 | In progress |
-| C08 | In progress |
+| C07 | 60% |
+| C08 | 100% |
 | C09 | In progress |
 | C10 | In progress |
 | C11 | Did not attempt |
